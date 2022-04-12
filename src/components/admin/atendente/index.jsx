@@ -4,6 +4,7 @@ import ImagemPadrao from "../../../config/undraw_teacher_re_sico.svg"
 import ImagemPreferencial from '../../../config/undraw_meet_the_team_re_4h08.svg'
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import ModalDeAtendimento from '../modalatendente';
+import TokenContext from '../../../context';
 import axios from 'axios';
 
 
@@ -27,10 +28,10 @@ function Atendente() {
         try {
 
             console.log(status, tipo)
-            const { data } = await servico.post("/giche/proximo", {
+            const { data } = await servico.post("/ticket/proximo", {
                 status: status,
                 tipo: tipo
-            });
+            }, { headers: { Authorization: ` Bearer   ${TokenContext.token} ` } });
             setExibirModalDeAtendimento(data)
             console.log(data)
             setErro(null)
@@ -87,16 +88,16 @@ function Atendente() {
             <Conteiner>
                 {!exibirModalDeAtendimento && <>
                     <Content>
-                        <DivOptions>
-                            <DivH3 onClick={handlePadrao}>
+                        <DivOptions onClick={handlePadrao}>
+                            <DivH3>
                                 <H3>Padrão</H3>
                             </DivH3>
                             <Img src={ImagemPadrao} width="250" height="250" />
                         </DivOptions>
                     </Content>
                     <Content>
-                        <DivOptions>
-                            <DivH3 onClick={handlePreferencial} >
+                        <DivOptions onClick={handlePreferencial}>
+                            <DivH3 >
                                 <H3>Prefêncial</H3>
                             </DivH3>
                             <Img src={ImagemPreferencial} width="250" height="250" />

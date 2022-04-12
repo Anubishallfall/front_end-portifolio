@@ -5,6 +5,7 @@ import Icone from "../../config/undraw_web_search_re_efla.svg"
 import Fundo from "../../config/vecteezybackground-whiteben0821_generated.jpg"
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import IconeFind from "../../config/GerenciadorDeAtend/find-7048_f123a9e4-3892-4d58-9702-279857bba76a.png"
 import Ticket from '../ticket';
 
 
@@ -41,7 +42,7 @@ function Consultador() {
     async function consultarGiche(senha) {
         try {
             console.log(senha);
-            const { data } = await servico.post("/giche/consultabysenha", senha);
+            const { data } = await servico.post("/ticket/consultabysenha", senha);
             console.log(data);
             setSenhaConsultada(data)
 
@@ -87,7 +88,7 @@ function Consultador() {
                                 <ImgCadastro src={Icone} width="200" height="200" />
                             </DivImg>
                             <H2>Consulte sua senha aqui</H2>
-                            <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} />
+                            <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />
                             <DivButton>
                                 <Button type="submit">Consultar</Button>
                             </DivButton>

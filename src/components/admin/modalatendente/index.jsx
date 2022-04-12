@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Container, DivTicket, DivButton, Img, Senha, Nome, Button, ButtonClose } from "./styles";
 import Icone from "../../../config/undraw_certificate_re_yadi.svg"
+import TokenContext from '../../../context';
 import axios from 'axios';
 
 
@@ -21,10 +22,10 @@ function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendime
 
     async function finalizarAtendimento(statusDefinalizacao, exibirModalDeAtendimento) {
 
-        const { data } = await servico.post("/giche/atualizar", {
+        const { data } = await servico.post("/ticket/atualizar", {
             status: statusDefinalizacao,
             id: exibirModalDeAtendimento.id
-        });
+        }, { headers: { Authorization: ` Bearer   ${TokenContext.token} ` } });
         console.log(data)
     }
 

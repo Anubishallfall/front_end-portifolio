@@ -3,6 +3,7 @@ import { Form, Div, Button, DivButton, DivImg, ImgCadastro, ConteinerInput, DivI
 import InputItemText from '../InputText/index'
 import Icone from "../../config/undraw_photocopy_re_gln4.svg"
 import axios from 'axios';
+import TokenContext from '../../context';
 
 
 const servico = axios.create({
@@ -44,7 +45,7 @@ function FormularioGerador({ setTicket }) {
     }
 
     async function gerarGiche(giche) {
-        const { data } = await servico.post("/giche", giche);
+        const { data } = await servico.post("/ticket", giche, { headers: { Authorization: ` Bearer   ${TokenContext.token} ` } });
         setTicket(data)
 
         console.log(data)

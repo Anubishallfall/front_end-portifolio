@@ -9,7 +9,7 @@ function Admin() {
             <Route path="/">
                 <Route index element={<Login />} />
                 <Route path="cadastro" element={<Cadastro />} />
-                <Route path="areaadmin/*" element={<AreaAdmin />} />
+                <Route path="workspaces/*" element={<AreaAdmin />} />
             </Route>
         </Routes>
     )

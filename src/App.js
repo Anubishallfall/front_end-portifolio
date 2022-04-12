@@ -9,6 +9,7 @@ class App extends Component {
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route path="admin/*" element={<Admin />} />
+          <Route path="criador" element={<h1>mauro</h1>} />
         </Routes>
       </BrowserRouter>
     );

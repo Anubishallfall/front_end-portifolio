@@ -5,6 +5,7 @@ import Atendente from "../../../config/undraw_work_time_re_hdyv.svg"
 import Gerador from "../../../config/undraw_election_day_w842.svg"
 import PainelImg from "../../../config/undraw_control_panel_re_y3ar.svg"
 import { useNavigate } from "react-router-dom";
+import TokenContext from '../../../context';
 function SelectAdm() {
     let navigate = useNavigate();
 
@@ -31,28 +32,28 @@ function SelectAdm() {
 
             <Container>
                 <Div>
-                    <DivOptions>
-                        <DivH3 onClick={() => navigate("gerador", { replace: true })}>
+                    <DivOptions onClick={() => navigate("gerador", { replace: true })}>
+                        <DivH3>
                             <H3>Gerador</H3>
                         </DivH3>
                         <Img src={Gerador} width="250" heigth="250" />
                     </DivOptions>
                 </Div>
                 <Div>
-                    <DivOptions>
-                        <DivH3 onClick={() => navigate("painel", { replace: true })}>
+                    <DivOptions onClick={() => navigate("painel", { replace: true })}>
+                        <DivH3>
                             <H3>Painel</H3>
                         </DivH3>
                         <Img src={PainelImg} width="250" heigth="250" />
                     </DivOptions>
                 </Div>
                 <Div>
-                    <DivOptions>
-                        <A to="atendente">
-                            <DivH3>
-                                <H3>Atendente</H3>
-                            </DivH3>
-                        </A>
+                    <DivOptions onClick={() => navigate("atendente")}>
+
+                        <DivH3>
+                            <H3>Atendente</H3>
+                        </DivH3>
+
                         <Img src={Atendente} width="250" heigth="250" />
                     </DivOptions>
                 </Div>

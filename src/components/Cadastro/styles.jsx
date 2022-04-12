@@ -67,9 +67,11 @@ font-size: 20px;
 border: none;
 color: #fff;
 background-color: #50BED2;
-&&:hover{
-    background-color: #6fdccf;
-}
+transition: transform .5s;
+ &:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px #888888;
+ }
 `;
 export const DivCirculo = styled.div`
 padding: 10px;

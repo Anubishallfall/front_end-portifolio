@@ -34,6 +34,11 @@ border-bottom-left-radius:  10px;
  background-color:#edf9fb;
  padding: 20px;
  box-shadow: 5px 5px 5px #888888;
+ transition: transform .5s;
+ &:hover{
+    transform: scale(1.1);
+    box-shadow: 20px 20px 20px #888888;
+ }
 `;
 
 export const Img = styled.img`
@@ -50,10 +55,6 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius:  10px;
 margin-bottom: 10px;
-&:hover{
-    cursor: pointer;
-    background-color: #6fdccf;
-}
 `;
 export const H3 = styled.h3`
 color: #fff;
