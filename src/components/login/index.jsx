@@ -7,18 +7,15 @@ import InputItemText from '../InputText';
 import IconeEmail from "../../config/GerenciadorDeAtend/envelope-8539_044e9790-f9f4-4dee-b712-88b39fc47698.png"
 import IconePassword from "../../config/Orion_password.svg"
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-import TokenContext from '../../context';
 
 
-const servicoLogin = axios.create({
-    baseURL: 'http://localhost:8080'
-});
+
+import { AutorizacaoContexto } from '../../context/Autorizacao';
 
 
 
 function Login() {
-
+    const { logIn } = useContext(AutorizacaoContexto)
     let navigate = useNavigate();
 
 
@@ -43,23 +40,10 @@ function Login() {
         console.log(login);
     }
 
-
-    function atribuirToken(data) {
-
-        TokenContext.token = data.token;
-
-    }
-
-    async function logarNoSistema(login) {
+    function logarNoSistema(login) {
         try {
-            const { data } = await servicoLogin.post("/auth", login);
-            if (data) {
-                atribuirToken(data);
-                console.log(TokenContext.token)
-                navigate("workspaces");
-
-            }
-
+            logIn(login);
+            navigate("workspaces");
         } catch (e) {
             setErro(e.response.data.message)
         }

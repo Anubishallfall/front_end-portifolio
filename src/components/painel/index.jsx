@@ -1,13 +1,76 @@
-import React from 'react'
-import { Body, Conteiner, DivTicket, DivTicketCentral } from "./styles";
+import React, { useState, useEffect } from 'react'
+import { Body, DivTicketDaVez, DivTicketAtendidos, TicketDaVez, TicketAtendido, H1Principal, Img, H1, H3 } from "./styles";
+import TokenContext from "../../context/index"
+import Fundo from "../../config/vecteezybackground-whiteben0821_generated.jpg"
+import axios from 'axios';
+
+
+const servico = axios.create({
+    baseURL: 'http://localhost:8080'
+});
+
+
 function Painel() {
+
+    console.log(TokenContext.token)
+
+
+    useEffect(() => {
+        setInterval(() => {
+            buscarTicketEmAtendimento();
+            buscarTicketAtendido();
+        }, 5000);
+    }, [])
+
+    const [ticketAtendido, setTicketAtendido] = useState([]);
+    const ticketsAtendidoParaExibicao = ticketAtendido.slice(-3)
+    const [ticketEmAtendimento, setTicketEmAtendimento] = useState([]);
+    const ticketEmAtendimentoParaExibicao = ticketEmAtendimento.slice(-1)
+
+    class Status {
+        status;
+        constructor(status) {
+            this.status = status
+        }
+    }
+
+
+    async function buscarTicketEmAtendimento() {
+        const status = new Status("EM_ATENDIMENTO")
+        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${TokenContext.token} ` } });
+        setTicketEmAtendimento(data)
+        console.log(data)
+    }
+
+    async function buscarTicketAtendido() {
+        const status = new Status("ATENDIDO")
+        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${TokenContext.token} ` } });
+        setTicketAtendido(data)
+        console.log(data)
+    }
+
+
     return (
-        <Body>
-            <Conteiner>
-                <DivTicket><h1>painel</h1></DivTicket>
-                <DivTicketCentral><h1>painel</h1></DivTicketCentral>
-                <DivTicket><h1>painel</h1></DivTicket>
-            </Conteiner>
+        <Body background={Fundo} >
+            <DivTicketDaVez>
+
+                {ticketEmAtendimentoParaExibicao.map((ticket, index) =>
+                    <TicketDaVez key={index}>
+                        <Img />
+                        <H1Principal>{ticket.senha}</H1Principal>
+                        <H3>Tipo: {ticket.tipo}</H3>
+                    </TicketDaVez>)}
+
+            </DivTicketDaVez>
+            <DivTicketAtendidos>
+                {ticketsAtendidoParaExibicao.map((ticket, index) =>
+                    <TicketAtendido key={index}>
+                        <H1>{ticket.senha}</H1>
+                        <H3>Tipo: {ticket.tipo}</H3>
+                    </TicketAtendido>)
+                }
+
+            </DivTicketAtendidos>
         </Body>
     )
 }
