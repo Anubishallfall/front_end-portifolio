@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Body, DivTicketDaVez, DivTicketAtendidos, TicketDaVez, TicketAtendido, H1Principal, Img, H1, H3 } from "./styles";
 import TokenContext from "../../context/index"
 import Fundo from "../../config/vecteezybackground-whiteben0821_generated.jpg"
+import { AutorizacaoContexto } from '../../context/Autorizacao';
 import axios from 'axios';
 
 
@@ -11,8 +12,7 @@ const servico = axios.create({
 
 
 function Painel() {
-
-    console.log(TokenContext.token)
+    const { autorizacao } = useContext(AutorizacaoContexto)
 
 
     useEffect(() => {
@@ -37,14 +37,14 @@ function Painel() {
 
     async function buscarTicketEmAtendimento() {
         const status = new Status("EM_ATENDIMENTO")
-        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${TokenContext.token} ` } });
+        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${autorizacao.token} ` } });
         setTicketEmAtendimento(data)
         console.log(data)
     }
 
     async function buscarTicketAtendido() {
         const status = new Status("ATENDIDO")
-        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${TokenContext.token} ` } });
+        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${autorizacao.token} ` } });
         setTicketAtendido(data)
         console.log(data)
     }

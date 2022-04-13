@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Container, DivTicket, DivButton, Img, Senha, Nome, Button, ButtonClose } from "./styles";
 import Icone from "../../../config/undraw_certificate_re_yadi.svg"
 import TokenContext from '../../../context';
+import { AutorizacaoContexto } from '../../../context/Autorizacao';
 import axios from 'axios';
 
 
@@ -17,7 +18,7 @@ const servico = axios.create({
 function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendimento, proximoEmAtendimento, tipo }) {
 
 
-
+    const { autorizacao } = useContext(AutorizacaoContexto)
 
 
     async function finalizarAtendimento(statusDefinalizacao, exibirModalDeAtendimento) {
@@ -25,7 +26,7 @@ function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendime
         const { data } = await servico.post("/ticket/atualizar", {
             status: statusDefinalizacao,
             id: exibirModalDeAtendimento.id
-        }, { headers: { Authorization: ` Bearer   ${TokenContext.token} ` } });
+        }, { headers: { Authorization: ` Bearer   ${autorizacao.token} ` } });
         console.log(data)
     }
 
