@@ -42,13 +42,16 @@ function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendime
 
     }
 
-
+    function closeAtendimento() {
+        finalizarAtendimento("ATENDIDO", exibirModalDeAtendimento)
+        setExibirModalDeAtendimento(null)
+    }
 
 
 
     return (
         <Container>
-            <ButtonClose onClick={() => setExibirModalDeAtendimento(null)}>X</ButtonClose>
+            <ButtonClose onClick={closeAtendimento}>X</ButtonClose>
             <DivTicket>
                 <Img src={Icone} width="150" height="150" />
                 <Senha>{exibirModalDeAtendimento.senha}</Senha>

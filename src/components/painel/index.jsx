@@ -18,14 +18,13 @@ function Painel() {
     useEffect(() => {
         setInterval(() => {
             buscarTicketEmAtendimento();
-            buscarTicketAtendido();
         }, 5000);
     }, [])
 
-    const [ticketAtendido, setTicketAtendido] = useState([]);
-    const ticketsAtendidoParaExibicao = ticketAtendido.slice(-3)
+
     const [ticketEmAtendimento, setTicketEmAtendimento] = useState([]);
-    const ticketEmAtendimentoParaExibicao = ticketEmAtendimento.slice(-1)
+    const ticketEmAtendimentoParaExibicaoPricipal = ticketEmAtendimento.slice(-1)
+    const ticketEmAtendimentoParaExibicaoSecundaria = ticketEmAtendimento.slice(-3)
 
     class Status {
         status;
@@ -39,22 +38,18 @@ function Painel() {
         const status = new Status("EM_ATENDIMENTO")
         const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${autorizacao.token} ` } });
         setTicketEmAtendimento(data)
+        console.log(ticketEmAtendimentoParaExibicaoSecundaria)
         console.log(data)
     }
 
-    async function buscarTicketAtendido() {
-        const status = new Status("ATENDIDO")
-        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${autorizacao.token} ` } });
-        setTicketAtendido(data)
-        console.log(data)
-    }
+
 
 
     return (
         <Body background={Fundo} >
             <DivTicketDaVez>
 
-                {ticketEmAtendimentoParaExibicao.map((ticket, index) =>
+                {ticketEmAtendimentoParaExibicaoPricipal.map((ticket, index) =>
                     <TicketDaVez key={index}>
                         <Img />
                         <H1Principal>{ticket.senha}</H1Principal>
@@ -63,7 +58,7 @@ function Painel() {
 
             </DivTicketDaVez>
             <DivTicketAtendidos>
-                {ticketsAtendidoParaExibicao.map((ticket, index) =>
+                {ticketEmAtendimentoParaExibicaoSecundaria.map((ticket, index) =>
                     <TicketAtendido key={index}>
                         <H1>{ticket.senha}</H1>
                         <H3>Tipo: {ticket.tipo}</H3>
