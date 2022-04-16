@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import ConfiguracaoSistema from "../../config/index"
+import ConfiguracaoSistema from "../../../config/index"
 
 export const Body = styled.div`
  width: 100%;
@@ -15,6 +15,11 @@ export const Conteiner = styled.div`
  width: 100%;
  display:flex;
  align-items: center;
+ @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 export const Form = styled.form`
 align-items: center;
@@ -80,9 +85,6 @@ border-top-right-radius: 150px;
 border-bottom-right-radius: 150px;
 border-bottom-left-radius:  150px;
 background-color: #50BED2;
-&&:hover{
-    background-color: #6fdccf;
-}
 `;
 export const DivFormCadastro = styled.div`
 width: 50%;
@@ -95,11 +97,17 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+@media (max-width: 800px) {
+display: block;
+    }
 `;
 
 export const ImgVoltarLogin = styled.img`
 width: 400px;
 height: 400px;
+@media (max-width: 800px) {
+display: block;
+    }
 `;
 export const ButtonLogin = styled.button`
 margin-bottom: 25px;

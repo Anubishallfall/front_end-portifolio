@@ -1,9 +1,11 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import Gerador from '../admin/gerador';
-import SelectAdm from '../admin/selectadm';
-import Atendente from '../admin/atendente';
-import Painel from "../painel/index"
+
+import SelectAdm from '../selectadm';
+import Atendente from '../atendente';
+import Painel from '../painel';
+import Gerador from '../gerador';
+
 function AreaAdmin() {
     return (
         <Routes>

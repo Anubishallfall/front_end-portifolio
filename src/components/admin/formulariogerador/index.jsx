@@ -1,10 +1,9 @@
 import React, { useRef, useContext } from 'react'
 import { Form, Div, Button, DivButton, DivImg, ImgCadastro, ConteinerInput, DivInput, Label, InputRadio, H2 } from "./styles";
 import InputItemText from '../InputText/index'
-import Icone from "../../config/undraw_photocopy_re_gln4.svg"
+import Icone from "../../../config/undraw_photocopy_re_gln4.svg"
 import axios from 'axios';
-import TokenContext from '../../context';
-import { AutorizacaoContexto } from '../../context/Autorizacao';
+import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
 const servico = axios.create({
@@ -49,7 +48,6 @@ function FormularioGerador({ setTicket }) {
     }
 
     async function gerarGiche(giche) {
-        console.log(TokenContext.token)
         const { data } = await servico.post("/ticket", giche, { headers: { Authorization: `Bearer ${autorizacao.token}` } });
         setTicket(data)
 

@@ -1,16 +1,16 @@
 import React, { useRef, useContext, useState } from 'react'
 import { Body, Conteiner, DivLoginForm, DivImagem, Form, Div, Button, DivButton, Img, DivImg, ImgCadastro, P, DivLink, PLink, Erro } from "./styles";
-import Logo from "../../config/vecteezybackground-whiteben0821_generated.jpg"
-import Imagem from '../../config/undraw_thought_process_re_om58.svg'
-import Imglogin from '../../config/undraw_login_re_4vu2.svg'
+import Logo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
+import Imagem from '../../../config/undraw_thought_process_re_om58.svg'
+import Imglogin from '../../../config/undraw_login_re_4vu2.svg'
 import InputItemText from '../InputText';
-import IconeEmail from "../../config/GerenciadorDeAtend/envelope-8539_044e9790-f9f4-4dee-b712-88b39fc47698.png"
-import IconePassword from "../../config/Orion_password.svg"
+import IconeEmail from "../../../config/inosneDeEmailAndStor/mail-4709_73fb6dab-8b77-4d84-b7bc-2fd8503fda46.png"
+import IconePassword from "../../../config/gerenciador de atend/lock-1445_ffd7cbd1-91e3-49be-8554-b2cd93c30dfc.png"
 import { useNavigate } from "react-router-dom";
 
 
 
-import { AutorizacaoContexto } from '../../context/Autorizacao';
+import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
 

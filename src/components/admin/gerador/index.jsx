@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Body, Conteiner, DivImagem, DivGerador, Img } from "./styles";
-import FormularioGerador from '../../formulariogerador';
+import FormularioGerador from '../formulariogerador';
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 
-import Ticket from '../../ticket';
+import Ticket from '../ticket';
 
 function Gerador() {
     const [ticket, setTicket] = useState();

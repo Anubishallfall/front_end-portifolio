@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react'
 import { Body, Conteiner, Form, Div, Button, DivButton, DivImg, ImgCadastro, H2, Header, ButtonNavRight, OptionDiv, HeaderContentRigth, Img, Erro } from "./styles";
-import InputItemText from '../InputText';
-import Icone from "../../config/undraw_web_search_re_efla.svg"
-import Fundo from "../../config/vecteezybackground-whiteben0821_generated.jpg"
+import InputItemText from '../../admin/InputText';
+import Icone from "../../../config/undraw_web_search_re_efla.svg"
+import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import IconeFind from "../../config/GerenciadorDeAtend/find-7048_f123a9e4-3892-4d58-9702-279857bba76a.png"
-import Ticket from '../ticket';
+import IconeFind from "../../../config/gerenciador de atend/find-1440_8882c961-ec7d-4eba-b39d-a503d1d433d4.png"
+import Ticket from '../../admin/ticket';
 
 
 const servico = axios.create({

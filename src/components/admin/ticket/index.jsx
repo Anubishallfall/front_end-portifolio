@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, SenhaValor, Div, SenhaTitulo, P, Img, DivDados, Button } from "./styles";
-import Icone from "../../config/undraw_personal_info_re_ur1n (1).svg"
+import Icone from "../../../config/undraw_personal_info_re_ur1n (1).svg"
 function Ticket({ ticket, setTicket }) {
     return (
         <Container>

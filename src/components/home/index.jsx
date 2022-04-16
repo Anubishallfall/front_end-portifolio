@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import Consultador from '../consultador';
+import Consultador from './consultador';
 function Home() {
     return (
         <Routes>

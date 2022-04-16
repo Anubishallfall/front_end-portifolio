@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ConfiguracaoSistema from "../../config/index"
+import ConfiguracaoSistema from "../../../config/index"
 
 export const Body = styled.div`
  width: 100%;

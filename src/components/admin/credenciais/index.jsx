@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Div, H2, Img, Button, DivButton } from "./styles";
-import Icone from "../../config/Orion_check-validate-circle.svg"
+import Icone from "../../../config/Orion_check-validate-circle.svg"
 import { useNavigate } from "react-router-dom";
 function CredenciasLoja({ loja }) {
     let navigate = useNavigate();

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ConfiguracaoSistema from "../../config/index"
+import ConfiguracaoSistema from "../../../config/index"
 
 export const Body = styled.div`
  width: 100%;
@@ -53,9 +53,6 @@ export const DivImg = styled.div`
 border-radius: 150px;
 background-color:#50BED2;
 padding: 20px;
-&&:hover{
-    background-color: #6fdccf;
-}
 
 `;
 export const InputRadio = styled.input`
