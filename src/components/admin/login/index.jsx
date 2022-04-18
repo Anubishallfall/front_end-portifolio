@@ -15,12 +15,8 @@ import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
 function Login() {
-    const { logIn } = useContext(AutorizacaoContexto)
+    const { logIn, erro } = useContext(AutorizacaoContexto)
     let navigate = useNavigate();
-
-
-    const [erro, setErro] = useState()
-
     const usernameRef = useRef();
     const passwordRef = useRef();
 
@@ -37,16 +33,11 @@ function Login() {
         e.preventDefault();
         const login = new Login(usernameRef.current.value, passwordRef.current.value);
         logarNoSistema(login);
-        console.log(login);
     }
 
     function logarNoSistema(login) {
-        try {
-            logIn(login);
-            navigate("workspaces");
-        } catch (e) {
-            setErro(e.response.data.message)
-        }
+        logIn(login);
+
     }
 
 
@@ -65,8 +56,8 @@ function Login() {
                             <DivImg>
                                 <ImgCadastro src={Imglogin} />
                             </DivImg>
-                            <InputItemText width="80%" placeholder="E-mail" type="text" refInput={usernameRef} background={IconeEmail} />
-                            <InputItemText width="80%" placeholder="Password" type="password" refInput={passwordRef} background={IconePassword} />
+                            <InputItemText width="80%" placeholder="E-mail" type="text" refInput={usernameRef} background={IconeEmail} requiredValue={true} />
+                            <InputItemText width="80%" placeholder="Password" type="password" refInput={passwordRef} background={IconePassword} requiredValue={true} />
                             <Erro>{erro}</Erro>
                             <DivButton>
                                 <Button onClick={handleLogar}>Login</Button>

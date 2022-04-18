@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 export const AutorizacaoContexto = createContext();
@@ -13,24 +14,32 @@ const servico = axios.create({
 export function AutorizacaoProvider({ children }) {
     const [autorizacao, setAutorizacao] = useState();
 
+
+    const [erro, setErro] = useState()
+
+    let navigate = useNavigate();
+
     useEffect(() => {
         obterLocalStorage();
     }, [])
 
     async function logIn(credenciais) {
-        const { data } = await servico.post("/auth", credenciais);
-        salvarLocalStorage(data)
-        setAutorizacao(data)
+        try {
+            const { data } = await servico.post("/auth", credenciais);
+            salvarLocalStorage(data)
+            setAutorizacao(data)
+            navigate("workspaces");
+        } catch (e) {
+            setErro(e.response.data.message)
+        }
     }
 
     function salvarLocalStorage(data) {
 
-        console.log("salvar autorizacao")
         localStorage.setItem("@gestor_atendimento_autorizacao", JSON.stringify(data));
     }
 
     function obterLocalStorage() {
-        console.log("obter autorizacao")
         let autorizacao = localStorage.getItem("@gestor_atendimento_autorizacao");
         if (autorizacao)
             setAutorizacao(JSON.parse(autorizacao));
@@ -44,6 +53,7 @@ export function AutorizacaoProvider({ children }) {
     return (
         <AutorizacaoContexto.Provider value={{
             autorizacao,
+            erro,
             logIn,
             logOut
         }}>

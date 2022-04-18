@@ -5,7 +5,6 @@ import Atendente from "../../../config/undraw_work_time_re_hdyv.svg"
 import Gerador from "../../../config/undraw_election_day_w842.svg"
 import PainelImg from "../../../config/undraw_control_panel_re_y3ar.svg"
 import { useNavigate } from "react-router-dom";
-import TokenContext from '../../../context';
 function SelectAdm() {
     let navigate = useNavigate();
 

@@ -87,7 +87,6 @@ function Cadastro() {
     }
 
     async function cadastrarLoja(loja) {
-        console.log(loja)
         const { data } = await servico.post("/loja", loja);
         setLojaExibicao(data)
 

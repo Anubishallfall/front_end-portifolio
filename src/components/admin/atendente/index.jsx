@@ -4,7 +4,6 @@ import ImagemPadrao from "../../../config/undraw_teacher_re_sico.svg"
 import ImagemPreferencial from '../../../config/undraw_meet_the_team_re_4h08.svg'
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import ModalDeAtendimento from '../modalatendente';
-import TokenContext from '../../../context';
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
 import axios from 'axios';
 

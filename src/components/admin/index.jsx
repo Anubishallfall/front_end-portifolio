@@ -4,6 +4,7 @@ import AreaAdmin from './areaadmin';
 
 import Cadastro from './Cadastro';
 import Login from './login';
+
 function Admin() {
     return (
         <Routes>

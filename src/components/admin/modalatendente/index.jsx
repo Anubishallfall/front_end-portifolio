@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Container, DivTicket, DivButton, Img, Senha, Nome, Button, ButtonClose } from "./styles";
-import Icone from "../../../config/undraw_certificate_re_yadi.svg"
-import TokenContext from '../../../context';
+import Icone from "../../../config/undraw_certificate_re_yadi.svg";
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
 import axios from 'axios';
 
