@@ -26,7 +26,6 @@ function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendime
             status: statusDefinalizacao,
             id: exibirModalDeAtendimento.id
         }, { headers: { Authorization: ` Bearer   ${autorizacao.token} ` } });
-        console.log(data)
     }
 
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Body, Conteiner, Form, Div, Button, DivButton, DivImg, ImgCadastro, H2, Header, ButtonNavRight, OptionDiv, HeaderContentRigth, Img, Erro } from "./styles";
+import { Body, Conteiner, Form, Div, Button, DivButton, DivImg, ImgCadastro, H2, Header, ButtonNavRight, OptionDiv, HeaderContentRigth, Img, Erro, Footer, P, RedesSociais } from "./styles";
 import InputItemText from '../../admin/InputText';
 import Icone from "../../../config/undraw_web_search_re_efla.svg"
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
@@ -41,9 +41,7 @@ function Consultador() {
     }
     async function consultarGiche(senha) {
         try {
-            console.log(senha);
             const { data } = await servico.post("/ticket/consultabysenha", senha);
-            console.log(data);
             setSenhaConsultada(data)
 
 
@@ -100,6 +98,10 @@ function Consultador() {
                 }
 
             </Conteiner>
+            <Footer>
+                <P> © 2022 Gerenciador de atendimento -
+                    creator by Mauro Peixoto</P>
+            </Footer>
         </Body>
     )
 }

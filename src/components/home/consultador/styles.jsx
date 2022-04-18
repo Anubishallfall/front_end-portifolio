@@ -8,6 +8,7 @@ height: ${ConfiguracaoSistema.tela.tamanho.height}px;
  background-size: auto;
  display: flex;
  flex-direction: column;
+ justify-content: space-between ;
 `;
 export const Form = styled.form`
 width: 400px;
@@ -90,7 +91,6 @@ export const Header = styled.div`
 width: 100%;
 display: flex;
 justify-content: end;
-margin-bottom: 50px;
 
 `;
 export const HeaderContentLeft = styled.div`
@@ -140,6 +140,18 @@ flex-direction: column;
 
 `;
 export const Erro = styled.p`
+font-size: small;
+color: #707070;
+`;
+export const Footer = styled.div`
+width: 100%;
+height: 9%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`;
+export const P = styled.p`
 font-size: small;
 color: #707070;
 `;

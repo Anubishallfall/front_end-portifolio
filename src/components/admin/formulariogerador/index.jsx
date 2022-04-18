@@ -50,8 +50,6 @@ function FormularioGerador({ setTicket }) {
     async function gerarGiche(giche) {
         const { data } = await servico.post("/ticket", giche, { headers: { Authorization: `Bearer ${autorizacao.token}` } });
         setTicket(data)
-
-        console.log(data)
     }
 
     return (

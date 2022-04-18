@@ -26,14 +26,11 @@ function Atendente() {
 
     async function proximoEmAtendimento(status, tipo) {
         try {
-
-            console.log(status, tipo)
             const { data } = await servico.post("/ticket/proximo", {
                 status: status,
                 tipo: tipo
             }, { headers: { Authorization: ` Bearer   ${autorizacao.token} ` } });
             setExibirModalDeAtendimento(data)
-            console.log(data)
             setErro(null)
 
 

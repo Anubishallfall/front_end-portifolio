@@ -17,7 +17,7 @@ function Painel() {
     useEffect(() => {
         setInterval(() => {
             buscarTicketEmAtendimento();
-        }, 5000);
+        }, 3000);
     }, [])
 
     const [exibicao, setExibicao] = useState([]);
@@ -38,8 +38,6 @@ function Painel() {
         const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${autorizacao.token} ` } });
         setTicketEmAtendimento(data)
         setExibicao(data)
-        console.log(ticketEmAtendimentoParaExibicaoSecundaria)
-        console.log(data)
     }
 
 
