@@ -15,7 +15,10 @@ import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
 function Login() {
-    const { logIn, erro } = useContext(AutorizacaoContexto)
+    const { logIn } = useContext(AutorizacaoContexto)
+
+    const [erro, setErro] = useState()
+
     let navigate = useNavigate();
     const usernameRef = useRef();
     const passwordRef = useRef();
@@ -35,9 +38,13 @@ function Login() {
         logarNoSistema(login);
     }
 
-    function logarNoSistema(login) {
-        logIn(login);
-
+    async function logarNoSistema(login) {
+        try {
+            await logIn(login);
+            navigate("workspaces")
+        } catch (e) {
+            setErro(e.response.data.message)
+        }
     }
 
 

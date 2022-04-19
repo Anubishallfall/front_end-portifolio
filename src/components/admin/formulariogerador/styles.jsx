@@ -48,10 +48,6 @@ export const DivImg = styled.div`
 border-radius: 150px;
 background-color:#50BED2;
 padding: 20px;
-&&:hover{
-    background-color: #6fdccf;
-}
-
 `;
 export const InputRadio = styled.input`
 background-color: #eee;

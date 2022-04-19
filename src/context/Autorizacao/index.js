@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 export const AutorizacaoContexto = createContext();
@@ -14,24 +13,17 @@ const servico = axios.create({
 export function AutorizacaoProvider({ children }) {
     const [autorizacao, setAutorizacao] = useState();
 
-
-    const [erro, setErro] = useState()
-
-    let navigate = useNavigate();
-
     useEffect(() => {
         obterLocalStorage();
     }, [])
 
+
     async function logIn(credenciais) {
-        try {
-            const { data } = await servico.post("/auth", credenciais);
-            salvarLocalStorage(data)
-            setAutorizacao(data)
-            navigate("workspaces");
-        } catch (e) {
-            setErro(e.response.data.message)
-        }
+        console.debug("logIn - start");
+        const { data } = await servico.post("/auth", credenciais);
+        salvarLocalStorage(data)
+        setAutorizacao(data)
+        console.debug("logIn - end");
     }
 
     function salvarLocalStorage(data) {
@@ -53,7 +45,6 @@ export function AutorizacaoProvider({ children }) {
     return (
         <AutorizacaoContexto.Provider value={{
             autorizacao,
-            erro,
             logIn,
             logOut
         }}>

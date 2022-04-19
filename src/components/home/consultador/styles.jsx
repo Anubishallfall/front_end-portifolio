@@ -88,9 +88,11 @@ align-items: center;
 
 `;
 export const Header = styled.div`
+margin-top: 1%;
 width: 100%;
 display: flex;
-justify-content: end;
+justify-content: space-between;
+align-items: center;
 
 `;
 export const HeaderContentLeft = styled.div`
@@ -105,22 +107,7 @@ display: flex;
 justify-content: center;
 
 `;
-export const ButtonNavLeft = styled.button`
-margin-top: 20px;
-padding: 8px 20px;
-font-size: 15px;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius:  10px;
-border: none;
-color: #fff;
-background-color: #50BED2;
-&&:hover{
-    background-color: #6fdccf;
-}
-`;
 export const ButtonNavRight = styled.button`
-margin-top: 20px;
 padding: 8px 20px;
 font-size: 15px;
 border-top-left-radius: 10px;
@@ -154,4 +141,13 @@ align-items: center;
 export const P = styled.p`
 font-size: small;
 color: #707070;
+`;
+export const DivLogo = styled.div`
+display: flex;
+flex-direction: row;
+margin-left: 5%;
+`;
+export const TextoLogo = styled.h1`
+color: #50BED2;
+
 `;
