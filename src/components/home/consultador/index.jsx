@@ -104,7 +104,7 @@ function Consultador() {
 
             </Conteiner>
             <Footer>
-                <P> © 2022 Gerenciador de atendimento -
+                <P> © 2022 Tictak Maneger -
                     creator by Mauro Peixoto</P>
             </Footer>
         </Body>
