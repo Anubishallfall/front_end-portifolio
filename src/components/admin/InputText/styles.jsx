@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const InputDiv = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 0.76vw;
     width: ${({ width }) => width ? width : "100%"};
 
-    @media(max-width: 800px){
+    @media(max-width:  61.25vw){
         width: 100%;
     }
 `;
@@ -15,14 +15,18 @@ export const InputText = styled.input`
 border-top: none;
 border-left: none;
 border-right: none;
-padding: 10px 20px;
+padding:  0.76vw 1.53vw;
 outline: none;
-padding-left: 25px;
+padding-left: 1.91vw;
 background:  ${props => `url(${props.background}) no-repeat left`};
-background-size: 20px;
+background-size: 1.53vw;
+&::placeholder {
+    font-size:  1.47vw;
+ 
+}
   
 `;
 export const InputLabel = styled.label`
     color: #000;
-    margin-top: 5px;
+    margin-top:  0.38vw;
 `;

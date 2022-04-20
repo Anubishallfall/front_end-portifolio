@@ -53,7 +53,7 @@ function Login() {
             <Conteiner>
                 <DivImagem>
                     <Div>
-                        <Img src={Imagem} width="400" height="400" />
+                        <Img src={Imagem} width="30.62" height="30.62" />
                     </Div>
                 </DivImagem>
                 <DivLoginForm>

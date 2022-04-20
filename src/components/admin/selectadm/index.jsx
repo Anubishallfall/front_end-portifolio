@@ -35,7 +35,7 @@ function SelectAdm() {
                         <DivH3>
                             <H3>Gerador</H3>
                         </DivH3>
-                        <Img src={Gerador} width="250" heigth="250" />
+                        <Img src={Gerador} width="19.14" heigth="19.14" />
                     </DivOptions>
                 </Div>
                 <Div>
@@ -43,7 +43,7 @@ function SelectAdm() {
                         <DivH3>
                             <H3>Painel</H3>
                         </DivH3>
-                        <Img src={PainelImg} width="250" heigth="250" />
+                        <Img src={PainelImg} width="19.14" heigth="19.14" />
                     </DivOptions>
                 </Div>
                 <Div>
@@ -53,7 +53,7 @@ function SelectAdm() {
                             <H3>Atendente</H3>
                         </DivH3>
 
-                        <Img src={Atendente} width="250" heigth="250" />
+                        <Img src={Atendente} width="19.14" heigth="19.14" />
                     </DivOptions>
                 </Div>
             </Container>

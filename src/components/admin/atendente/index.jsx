@@ -89,7 +89,7 @@ function Atendente() {
                             <DivH3>
                                 <H3>Padrão</H3>
                             </DivH3>
-                            <Img src={ImagemPadrao} width="250" height="250" />
+                            <Img src={ImagemPadrao} width="19.14" height="19.14" />
                         </DivOptions>
                     </Content>
                     <Content>
@@ -97,7 +97,7 @@ function Atendente() {
                             <DivH3 >
                                 <H3>Prefêncial</H3>
                             </DivH3>
-                            <Img src={ImagemPreferencial} width="250" height="250" />
+                            <Img src={ImagemPreferencial} width="19.14" height="19.14" />
                         </DivOptions>
                     </Content>
                 </>

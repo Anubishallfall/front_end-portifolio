@@ -11,8 +11,8 @@ height: ${ConfiguracaoSistema.tela.tamanho.height}px;
  justify-content: space-between ;
 `;
 export const Form = styled.form`
-width: 400px;
-height: 400px;
+width: 30.62vw;
+height: 30.62vw;
 `;
 export const Conteiner = styled.div`
  width: 100%;
@@ -21,16 +21,16 @@ export const Conteiner = styled.div`
  align-items: center;
 `;
 export const Button = styled.button`
-margin-top: 20px;
-padding: 8px 20px;
-font-size: 25px;
+margin-top:  1.53vw;
+padding:  0.61vw 1.53vw;
+font-size: 1.91vw;
 border: none;
 color: #fff;
 background-color: #50BED2;
 transition: transform .5s;
  &:hover{
     transform: scale(1.1);
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 0.38vw 0.38vw 0.38vw #888888;
  }
 `;
 
@@ -42,18 +42,18 @@ justify-content:center;
 `;
 
 export const Img = styled.img`
-width:  ${props => `${props.width}`}px;
-height:  ${props => `${props.height}`}px;
+width:  ${props => `${props.width}`}vw;
+height:  ${props => `${props.height}`}vw;
 `;
 
 export const ImgCadastro = styled.img`
-width: 200px;
-height: 200px;
+width:  15.31vw;
+height:  15.31vw;
 `;
 export const DivImg = styled.div`
-border-radius: 150px;
+border-radius:  11.48vw;
 background-color:#50BED2;
-padding: 20px;
+padding: 1.53vw;
 
 `;
 export const InputRadio = styled.input`
@@ -67,7 +67,7 @@ export const Label = styled.label`
 `;
 export const ConteinerInput = styled.div`
 width: 80%;
-margin-top: 20px;
+margin-top:  1.53vw;
 display: flex;
 justify-content: space-evenly;
 `;
@@ -79,6 +79,7 @@ align-items:center;
 
 export const H2 = styled.h2`
 color: #3f3d56;
+font-size: 1.83vw;
 `;
 export const Div = styled.div`
 width: 100%;
@@ -108,18 +109,18 @@ justify-content: center;
 
 `;
 export const ButtonNavRight = styled.button`
-padding: 8px 20px;
-font-size: 15px;
-border-top-left-radius: 10px;
-border-bottom-left-radius: 10px;
-border-bottom-right-radius:  10px;
+padding:  0.61vw  1.53vw;
+font-size:  1.14vw;
+border-top-left-radius: 0.76vw;
+border-bottom-left-radius:  0.76vw;
+border-bottom-right-radius:   0.76vw;
 border: none;
 color: #fff;
 background-color: #50BED2;
 transition: transform .5s;
  &:hover{
     transform: scale(1.1);
-    box-shadow: 5px 5px 5px #888888;}
+    box-shadow:  0.38vw  0.38vw 0.38vw #888888;}
 `;
 export const OptionDiv = styled.div`
 display: flex;
@@ -139,7 +140,7 @@ justify-content: center;
 align-items: center;
 `;
 export const P = styled.p`
-font-size: small;
+font-size:  0.99vw;
 color: #707070;
 `;
 export const DivLogo = styled.div`
@@ -148,6 +149,7 @@ flex-direction: row;
 margin-left: 5%;
 `;
 export const TextoLogo = styled.h1`
+font-size:  2.45vw;
 color: #50BED2;
 
 `;

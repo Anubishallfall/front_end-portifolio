@@ -13,8 +13,8 @@ export const DivTicketAtendidos = styled.div`
  display:flex;
  flex-direction: column;
  align-items: center;
- padding-top: 10px;
- padding-bottom: 10px;
+ padding-top: 0.76vw;
+ padding-bottom:  0.76vw;
  `;
 export const DivTicketDaVez = styled.div`
  width: 70%;
@@ -33,37 +33,39 @@ export const TicketDaVez = styled.div`
  justify-content: center;
  align-items: center;
  background-color:#044073;
-border-top-right-radius: 25px;
-border-bottom-right-radius: 25px;
-border-bottom-left-radius:  25px;
- box-shadow: 10px 10px 10px #888888;
+border-top-right-radius: 1.914vw;
+border-bottom-right-radius: 1.914vw;
+border-bottom-left-radius:  1.914vw;
+ box-shadow:  0.76vw  0.76vw  0.76vw #888888;
  `;
 
 export const TicketAtendido = styled.div`
-margin-top: 10px;
+margin-top:  0.76vw;
 width: 80%;
-height: 200px;
+height: 15.313vw;
 display:flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 background-color:#50BED2; 
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius:  10px;
-box-shadow: 5px 5px 5px #888888;
+border-top-right-radius:  0.76vw;
+border-bottom-right-radius:  0.76vw;
+border-bottom-left-radius:   0.76vw;
+box-shadow: 0.382vw 0.382vw 0.382vw #888888;
 `;
 export const H1 = styled.h1`
 color: #fff;
+font-size:  2.45vw;
 `;
 export const H3 = styled.h3`
+font-size: 1.59vw;
 color: #fff;
 `;
 export const H1Principal = styled.h1`
 color: #fff;
-font-size: 100px;
+font-size: 7.65vw;
 `;
 export const Img = styled.img`
-width:  ${props => `${props.width}`}px;
-height:  ${props => `${props.height}`}px;
+width:  ${props => `${props.width}`}vw;
+height:  ${props => `${props.height}`}vw;
 `;

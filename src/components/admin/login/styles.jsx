@@ -14,21 +14,35 @@ export const Conteiner = styled.div`
  width: 100%;
  display:flex;
  align-items: center;
+ @media (max-width: 800px) {
+    height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 export const DivImagem = styled.div`
  width: 50%;
  display: flex;
  justify-content:center ;
+ @media (max-width: 800px) {
+display: none;
+visibility: hidden;
+    }
 `;
 export const DivLoginForm = styled.div`
  width: 50%;
  display: flex;
- justify-content: center;
+ justify-content: center
 `;
 
 export const Form = styled.form`
-width: 300px;
-height: 400px;
+width: 23vw;
+height: 30.75vw;
+@media (max-width: 800px) {
+width: 100%;
+height: 200%;
+    }
 
 `;
 export const Div = styled.div`
@@ -39,16 +53,16 @@ align-items: center;
 
 `;
 export const Button = styled.button`
-margin-top: 20px;
-padding: 8px 20px;
-font-size: 25px;
+margin-top: 1.3vw;
+padding: 0.55vw 1.5vw;
+font-size: 2vw;
 border: none;
 color: #fff;
 background-color: #50BED2;
 transition: transform .5s;
  &:hover{
     transform: scale(1.1);
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 0.3vw  0.3vw  0.3vw #888888;
  }
 `;
 
@@ -60,41 +74,46 @@ justify-content:center;
 `;
 
 export const Img = styled.img`
-width:  ${props => `${props.width}`}px;
-height:  ${props => `${props.height}`}px;
+width:  ${props => `${props.width}`}vw;
+height:  ${props => `${props.height}`}vw;
+@media (width: 100px) {
+   display: none;
+   visibility: hidden;
+        
+    }
 `;
 
 export const ImgCadastro = styled.img`
-width: 200px;
-height: 200px;
+width: 15.31vw;
+height: 15.31vw;
 `;
 export const DivImg = styled.div`
-border-radius: 150px;
+border-radius: 11.48vw;
 background-color:#50BED2;
-padding: 20px;
+padding: 1.53vw;
 
 `;
 
 export const P = styled.p`
-font-size: small;
+font-size:  0.99vw;
 color: #707070;
 `;
 
 export const PLink = styled.p`
-font-size: small;
+font-size:  0.99vw;
 color: #50BED2;
 cursor: pointer;
-margin-left: 2px;
+margin-left: 0.15vw;
 `;
 export const DivLink = styled.div`
-margin-top: 20px;
+margin-top: 1.53vw;
 width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 `;
 export const Erro = styled.p`
-font-size: small;
+font-size:  0.99vw;
 color: #707070;
 `;
 
