@@ -74,7 +74,7 @@ function Consultador() {
         <Body background={Fundo} >
             <Header>
                 <DivLogo>
-                    <TextoLogo>{process.env.REACT_APP_LINK_API}</TextoLogo>
+                    <TextoLogo>Tictak</TextoLogo>
                     <Img src={Logo} width="50" height="50" />
                 </DivLogo>
                 <HeaderContentRigth>
