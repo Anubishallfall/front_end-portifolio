@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8e19cb6b.css",
+    "main.js": "/static/js/main.82b077b5.js",
+    "static/media/vecteezybackground-whiteben0821_generated.jpg": "/static/media/vecteezybackground-whiteben0821_generated.8a06c7d12f19c0ea62c4.jpg",
+    "static/media/undraw_control_panel_re_y3ar.svg": "/static/media/undraw_control_panel_re_y3ar.89e4f32a99f1f6757d49161a00d7e977.svg",
+    "static/media/undraw_meet_the_team_re_4h08.svg": "/static/media/undraw_meet_the_team_re_4h08.d604106695c56ea67a2fffb3196bb022.svg",
+    "static/media/undraw_work_time_re_hdyv.svg": "/static/media/undraw_work_time_re_hdyv.85386513378a032298d157967262bbc9.svg",
+    "static/media/undraw_thought_process_re_om58.svg": "/static/media/undraw_thought_process_re_om58.5afb4a97d8997bf0334ff2a2e0fbd8e5.svg",
+    "static/media/undraw_personal_info_re_ur1n (1).svg": "/static/media/undraw_personal_info_re_ur1n (1).9d654031445251499bb38f57ad1cafb6.svg",
+    "static/media/marker-location-645_a9f93d76-2309-4d81-b24d-6aa6611dff3c.png": "/static/media/marker-location-645_a9f93d76-2309-4d81-b24d-6aa6611dff3c.22af4d860278d140ed67.png",
+    "static/media/geo-fence-672_14a26df4-413c-4c76-86cb-4bd1bed5b205.png": "/static/media/geo-fence-672_14a26df4-413c-4c76-86cb-4bd1bed5b205.68f952d5ae643529dd99.png",
+    "static/media/calls-4648_57996ff0-34a3-4225-8ea3-3f70ffda4820.png": "/static/media/calls-4648_57996ff0-34a3-4225-8ea3-3f70ffda4820.5ea333c5de51023cd9cb.png",
+    "static/media/undraw_photocopy_re_gln4.svg": "/static/media/undraw_photocopy_re_gln4.b93d78a2ba016bcc2db4cccf4b6bcc5f.svg",
+    "static/media/undraw_teacher_re_sico.svg": "/static/media/undraw_teacher_re_sico.b4d20f38d739c1b6d4b4b490dbd89d4d.svg",
+    "static/media/undraw_online_ad_re_ol62.svg": "/static/media/undraw_online_ad_re_ol62.798db52b1177ab852b483144b1b2cb6b.svg",
+    "static/media/undraw_access_account_re_8spm.svg": "/static/media/undraw_access_account_re_8spm.9b1e5acf3037591c1a336dec4f6e7e68.svg",
+    "static/media/undraw_election_day_w842.svg": "/static/media/undraw_election_day_w842.a192cf059ad36f6845d677b87c1f4b84.svg",
+    "static/media/undraw_login_re_4vu2.svg": "/static/media/undraw_login_re_4vu2.ebb701c1a9f4549de317f6a31ed0c3d0.svg",
+    "static/media/undraw_web_search_re_efla.svg": "/static/media/undraw_web_search_re_efla.99445d088799c5be7dd849a701c385b9.svg",
+    "static/media/undraw_certificate_re_yadi.svg": "/static/media/undraw_certificate_re_yadi.2adbcd5b693bd02a6a84a30a90476460.svg",
+    "static/media/Orion_entrance.svg": "/static/media/Orion_entrance.877ea3e425e2a003d48b9044b802c2b1.svg",
+    "static/media/Orion_check-validate-circle.svg": "/static/media/Orion_check-validate-circle.f79e962d35aa1e2c4adf1d2937c1d415.svg",
+    "index.html": "/index.html",
+    "main.8e19cb6b.css.map": "/static/css/main.8e19cb6b.css.map",
+    "main.82b077b5.js.map": "/static/js/main.82b077b5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e19cb6b.css",
+    "static/js/main.82b077b5.js"
+  ]
+}
