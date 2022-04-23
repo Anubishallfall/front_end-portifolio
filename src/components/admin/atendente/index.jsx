@@ -21,7 +21,7 @@ function Atendente() {
             setExibirModalDeAtendimento(data)
             setErro(null)
         } catch (e) {
-            setErro(e.response.data.message)
+            setErro("Não há tickets no momento, tente outro tipo!")
             setExibirModalDeAtendimento(null)
         }
     }

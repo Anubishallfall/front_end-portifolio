@@ -39,6 +39,11 @@ class Api {
         return this.servico.post("/ticket/status", status);
     }
 
+
+    getCriarLoja = function (loja) {
+        return this.servico.post("/loja", loja);
+    }
+
 }
 
 

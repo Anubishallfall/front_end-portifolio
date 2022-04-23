@@ -39,7 +39,7 @@ function Login() {
             await logIn(login);
             navigate("workspaces")
         } catch (e) {
-            setErro(e.response.data.message)
+            setErro("usuario e senha inválidos")
         }
     }
 

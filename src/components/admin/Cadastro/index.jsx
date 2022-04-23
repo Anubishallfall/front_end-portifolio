@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useContext } from 'react'
 import { Body, Conteiner, Form, Div, Img, DivImagem, DivButton, Button, DivCirculo, DivFormCadastro, DivButtonVoltarLogin, PLogin, ImgVoltarLogin, DivVoltarParaLogin, DivButtonCadastrar, P, A } from "./styles";
 import Logo from "../../../config/undraw_access_account_re_8spm.svg"
 import InputItemText from '../InputText';
@@ -12,18 +12,17 @@ import IconeLocalizaco from "../../../config/gerenciador de atend/marker-locatio
 import IconeBairro from "../../../config/iconesUteis/geo-fence-672_14a26df4-413c-4c76-86cb-4bd1bed5b205.png"
 import IconeState from "../../../config/iconesUteis/flag-2824_f7195632-ac04-469a-9ce4-33a26fc8992e.png"
 import IconeStore from "../../../config/inosneDeEmailAndStor/secure-shopping-2189_def91454-a825-41f2-ac15-8c6232a42b27.png"
-
-import axios from 'axios';
 import CredenciasLoja from '../credenciais';
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import { useNavigate } from "react-router-dom"
-
-const servico = axios.create({
-    baseURL: process.env.REACT_APP_LINK_API
-});
+import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
 function Cadastro() {
+
+
+    const { api } = useContext(AutorizacaoContexto)
+
     const [lojaExibicao, setLojaExibicao] = useState();
     let navigate = useNavigate();
 
@@ -87,7 +86,7 @@ function Cadastro() {
     }
 
     async function cadastrarLoja(loja) {
-        const { data } = await servico.post("/loja", loja);
+        const { data } = await api.getCriarLoja(loja);
         setLojaExibicao(data)
 
     }

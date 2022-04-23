@@ -42,8 +42,7 @@ function Consultador() {
 
 
         } catch (e) {
-            console.log(e)
-            setErro(e.response.data.message)
+            setErro("Senha inválida")
         }
 
     }
@@ -70,10 +69,10 @@ function Consultador() {
                             </DivImg>
                             <H2>Consulte sua senha aqui</H2>
                             <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />
+                            {erro && <Erro>{erro}</Erro>}
                             <DivButton>
                                 <Button type="submit">Consultar</Button>
                             </DivButton>
-                            {erro && <Erro>{erro}</Erro>}
 
                         </Div>
 
