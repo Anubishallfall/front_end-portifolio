@@ -8,7 +8,10 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<Home />} />
+          <Route path="/*" element={
+            <AutorizacaoProvider>
+              <Home />
+            </AutorizacaoProvider>} />
           <Route path="admin/*" element={
             <AutorizacaoProvider>
               <Admin />

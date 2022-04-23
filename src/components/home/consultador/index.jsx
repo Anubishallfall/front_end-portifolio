@@ -1,23 +1,18 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useContext } from 'react'
 import { Body, Conteiner, Form, Div, Button, DivButton, DivImg, ImgCadastro, H2, Header, ButtonNavRight, OptionDiv, HeaderContentRigth, Img, Erro, Footer, P, TextoLogo, DivLogo } from "./styles";
 import InputItemText from '../../admin/InputText';
 import Icone from "../../../config/undraw_web_search_re_efla.svg"
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
-import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import IconeFind from "../../../config/gerenciador de atend/find-1440_8882c961-ec7d-4eba-b39d-a503d1d433d4.png"
 import Ticket from '../../admin/ticket';
 import Logo from '../../../config/Orion_entrance.svg'
-
-
-const servico = axios.create({
-    baseURL: 'http://localhost:8080'
-});
-
+import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
 function Consultador() {
 
+    const { api } = useContext(AutorizacaoContexto)
     const [senhaConsultada, setSenhaConsultada] = useState();
     const [erro, setErro] = useState();
     let navigate = useNavigate();
@@ -42,11 +37,12 @@ function Consultador() {
     }
     async function consultarGiche(senha) {
         try {
-            const { data } = await servico.post("/ticket/consultabysenha", senha);
+            const { data } = await api.getConsultarSenha(senha);
             setSenhaConsultada(data)
 
 
         } catch (e) {
+            console.log(e)
             setErro(e.response.data.message)
         }
 

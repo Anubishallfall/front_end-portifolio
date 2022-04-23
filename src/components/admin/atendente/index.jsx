@@ -5,19 +5,10 @@ import ImagemPreferencial from '../../../config/undraw_meet_the_team_re_4h08.svg
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import ModalDeAtendimento from '../modalatendente';
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
-import axios from 'axios';
-
-
-const servico = axios.create({
-    baseURL: process.env.REACT_APP_LINK_API
-});
-
-
-
 
 function Atendente() {
 
-    const { autorizacao } = useContext(AutorizacaoContexto)
+    const { api } = useContext(AutorizacaoContexto);
 
     const [exibirModalDeAtendimento, setExibirModalDeAtendimento] = useState()
     const [tipo, setTipo] = useState()
@@ -26,14 +17,9 @@ function Atendente() {
 
     async function proximoEmAtendimento(status, tipo) {
         try {
-            const { data } = await servico.post("/ticket/proximo", {
-                status: status,
-                tipo: tipo
-            }, { headers: { Authorization: ` Bearer   ${autorizacao.token} ` } });
+            const { data } = await api.getProximaSenha(status, tipo)
             setExibirModalDeAtendimento(data)
             setErro(null)
-
-
         } catch (e) {
             setErro(e.response.data.message)
             setExibirModalDeAtendimento(null)

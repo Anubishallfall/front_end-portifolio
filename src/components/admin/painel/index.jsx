@@ -2,22 +2,15 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Body, DivTicketDaVez, DivTicketAtendidos, TicketDaVez, TicketAtendido, H1Principal, Img, H1, H3 } from "./styles";
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
-import axios from 'axios';
-
-
-const servico = axios.create({
-    baseURL: process.env.REACT_APP_LINK_API
-});
-
 
 function Painel() {
-    const { autorizacao } = useContext(AutorizacaoContexto)
+    const { api } = useContext(AutorizacaoContexto)
 
 
     useEffect(() => {
         setInterval(() => {
             buscarTicketEmAtendimento();
-        }, 3000);
+        }, 2000);
     }, [])
 
     const [exibicao, setExibicao] = useState([]);
@@ -34,10 +27,11 @@ function Painel() {
 
 
     async function buscarTicketEmAtendimento() {
-        const status = new Status("EM_ATENDIMENTO")
-        const { data } = await servico.post("/ticket/status", status, { headers: { Authorization: `Bearer   ${autorizacao.token} ` } });
-        setTicketEmAtendimento(data)
-        setExibicao(data)
+        const status = new Status("EM_ATENDIMENTO");
+        const { data } = await api.getSenhaPainel(status);
+        console.log(data)
+        setTicketEmAtendimento(data);
+        setExibicao(data);
     }
 
 
