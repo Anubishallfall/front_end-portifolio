@@ -13,11 +13,6 @@ function SelectAdm() {
 
     }
 
-
-
-
-
-
     return (
         <Body background={Fundo}>
             <HeaderTitulo>

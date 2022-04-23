@@ -1,17 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react';
-import axios from 'axios';
-
+import Api from '../../service/Api';
 export const AutorizacaoContexto = createContext();
 AutorizacaoContexto.displayName = "AutorizacaoContexto"
 
 
-const servico = axios.create({
-    baseURL: 'http://localhost:8080'
-});
-
-
 export function AutorizacaoProvider({ children }) {
     const [autorizacao, setAutorizacao] = useState();
+    const [api, setApi] = useState(new Api());
+
+    useEffect(() => {
+        setApi(new Api(autorizacao))
+    }, [autorizacao])
 
     useEffect(() => {
         obterLocalStorage();
@@ -20,7 +19,7 @@ export function AutorizacaoProvider({ children }) {
 
     async function logIn(credenciais) {
         console.debug("logIn - start");
-        const { data } = await servico.post("/auth", credenciais);
+        const { data } = await api.getAuth(credenciais)
         salvarLocalStorage(data)
         setAutorizacao(data)
         console.debug("logIn - end");
@@ -44,7 +43,7 @@ export function AutorizacaoProvider({ children }) {
 
     return (
         <AutorizacaoContexto.Provider value={{
-            autorizacao,
+            api,
             logIn,
             logOut
         }}>

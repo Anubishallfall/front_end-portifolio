@@ -52,30 +52,12 @@ function Consultador() {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <Body background={Fundo} >
             <Header>
                 <DivLogo>
                     <TextoLogo>Tictak</TextoLogo>
-                    <Img src={Logo} width="3.82" height="3.82" />
+                    <Img src={Logo} width="50" height="50" />
                 </DivLogo>
                 <HeaderContentRigth>
                     <OptionDiv>
@@ -88,7 +70,7 @@ function Consultador() {
                     <Form onSubmit={handleConsultar}>
                         <Div>
                             <DivImg>
-                                <Img src={Icone} width="15.31" height="15.31" />
+                                <Img src={Icone} width="200" height="200" />
                             </DivImg>
                             <H2>Consulte sua senha aqui</H2>
                             <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />

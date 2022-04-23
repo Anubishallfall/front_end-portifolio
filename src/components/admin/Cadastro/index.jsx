@@ -19,7 +19,7 @@ import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg
 import { useNavigate } from "react-router-dom"
 
 const servico = axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: process.env.REACT_APP_LINK_API
 });
 
 

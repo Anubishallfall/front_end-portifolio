@@ -8,11 +8,7 @@ import IconeEmail from "../../../config/inosneDeEmailAndStor/mail-4709_73fb6dab-
 import IconePassword from "../../../config/gerenciador de atend/lock-1445_ffd7cbd1-91e3-49be-8554-b2cd93c30dfc.png"
 import { useNavigate } from "react-router-dom";
 
-
-
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
-
-
 
 function Login() {
     const { logIn } = useContext(AutorizacaoContexto)

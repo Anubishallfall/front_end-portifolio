@@ -1,19 +1,14 @@
-import React, { useRef, useContext } from 'react'
+import React, { useRef, useContext, useEffect } from 'react'
 import { Form, Div, Button, DivButton, DivImg, ImgCadastro, ConteinerInput, DivInput, Label, InputRadio, H2 } from "./styles";
 import InputItemText from '../InputText/index'
 import Icone from "../../../config/undraw_photocopy_re_gln4.svg"
-import axios from 'axios';
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
-
-
-const servico = axios.create({
-    baseURL: 'http://localhost:8080'
-});
 
 
 function FormularioGerador({ setTicket }) {
 
-    const { autorizacao } = useContext(AutorizacaoContexto)
+    const { api } = useContext(AutorizacaoContexto)
+
 
     const nomeRef = useRef();
     const tipoRef = useRef();
@@ -48,7 +43,7 @@ function FormularioGerador({ setTicket }) {
     }
 
     async function gerarGiche(giche) {
-        const { data } = await servico.post("/ticket", giche, { headers: { Authorization: `Bearer ${autorizacao.token}` } });
+        const { data } = await api.getTicket(giche);
         setTicket(data)
     }
 

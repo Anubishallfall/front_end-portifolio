@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 const servico = axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: process.env.REACT_APP_LINK_API
 });
 
 
