@@ -9,11 +9,13 @@ import IconePassword from "../../../config/gerenciador de atend/lock-1445_ffd7cb
 import { useNavigate } from "react-router-dom";
 
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
+import Loading from '../load';
 
 function Login() {
     const { logIn } = useContext(AutorizacaoContexto)
 
-    const [erro, setErro] = useState()
+    const [erro, setErro] = useState();
+    const [loading, setLoading] = useState(false);
 
     let navigate = useNavigate();
     const usernameRef = useRef();
@@ -36,9 +38,11 @@ function Login() {
 
     async function logarNoSistema(login) {
         try {
+            await setLoading(true)
             await logIn(login);
             navigate("workspaces")
         } catch (e) {
+            setLoading(false)
             setErro("usuario e senha inválidos")
         }
     }
@@ -54,23 +58,28 @@ function Login() {
                 </DivImagem>
                 <DivLoginForm>
 
-                    <Form>
-                        <Div>
-                            <DivImg>
-                                <ImgCadastro src={Imglogin} />
-                            </DivImg>
-                            <InputItemText width="80%" placeholder="E-mail" type="text" refInput={usernameRef} background={IconeEmail} requiredValue={true} />
-                            <InputItemText width="80%" placeholder="Password" type="password" refInput={passwordRef} background={IconePassword} requiredValue={true} />
-                            <Erro>{erro}</Erro>
-                            <DivButton>
-                                <Button onClick={handleLogar}>Login</Button>
-                            </DivButton>
-                            <DivLink>
-                                <P>Não tem uma conta?</P>
-                                <PLink onClick={() => navigate("cadastro")} >Cadastre-se</PLink>
-                            </DivLink>
-                        </Div>
-                    </Form>
+                    {loading &&
+                        <Loading width=" 15.31" height=" 15.31" />
+                        ||
+                        <Form onSubmit={handleLogar}>
+                            <Div>
+                                <DivImg>
+                                    <ImgCadastro src={Imglogin} />
+                                </DivImg>
+                                <InputItemText width="80%" placeholder="E-mail" type="text" refInput={usernameRef} background={IconeEmail} requiredValue={true} />
+                                <InputItemText width="80%" placeholder="Password" type="password" refInput={passwordRef} background={IconePassword} requiredValue={true} />
+                                <Erro>{erro}</Erro>
+                                <DivButton>
+                                    <Button type='submit'>Login</Button>
+                                </DivButton>
+                                <DivLink>
+                                    <P>Não tem uma conta?</P>
+                                    <PLink onClick={() => navigate("cadastro")} >Cadastre-se</PLink>
+                                </DivLink>
+                            </Div>
+                        </Form>
+
+                    }
 
                 </DivLoginForm>
             </Conteiner>

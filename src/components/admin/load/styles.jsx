@@ -1,0 +1,9 @@
+
+import styled from "styled-components";
+
+
+
+export const Img = styled.img`
+width:  ${props => `${props.width}`}vw;
+height:  ${props => `${props.height}`}vw;
+`

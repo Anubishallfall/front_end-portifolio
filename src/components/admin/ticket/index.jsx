@@ -1,7 +1,15 @@
 import React from 'react'
 import { Container, SenhaValor, Div, SenhaTitulo, P, Img, DivDados, Button } from "./styles";
 import Icone from "../../../config/undraw_personal_info_re_ur1n (1).svg"
-function Ticket({ ticket, setTicket }) {
+function Ticket({ ticket, setTicket, setLoading }) {
+
+
+    function handleCloseTicket() {
+        setLoading(false);
+        setTicket(null);
+    }
+
+
     return (
         <Container>
             <Div><Img src={Icone} /></Div>
@@ -18,7 +26,7 @@ function Ticket({ ticket, setTicket }) {
             <DivDados>
                 <P>Status:{ticket.status.descricao}</P>
             </DivDados>
-            <Button onClick={() => setTicket(null)}>X</Button>
+            <Button onClick={handleCloseTicket}>X</Button>
         </Container>
     )
 }

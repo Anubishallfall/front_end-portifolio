@@ -5,7 +5,7 @@ import Icone from "../../../config/undraw_photocopy_re_gln4.svg"
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
 
-function FormularioGerador({ setTicket }) {
+function FormularioGerador({ setTicket, setLoading }) {
 
     const { api } = useContext(AutorizacaoContexto)
 
@@ -43,6 +43,7 @@ function FormularioGerador({ setTicket }) {
     }
 
     async function gerarGiche(giche) {
+        setLoading(true);
         const { data } = await api.getTicket(giche);
         setTicket(data)
     }

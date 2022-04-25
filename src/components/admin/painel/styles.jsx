@@ -7,6 +7,7 @@ height: ${ConfiguracaoSistema.tela.tamanho.height}px;
  background: ${props => `url(${props.background}) no-repeat top center`};
  background-size: auto;
  display: flex;
+ justify-content: center;
 `;
 export const DivTicketAtendidos = styled.div`
  width: 30%;

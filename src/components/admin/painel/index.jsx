@@ -2,10 +2,11 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Body, DivTicketDaVez, DivTicketAtendidos, TicketDaVez, TicketAtendido, H1Principal, Img, H1, H3 } from "./styles";
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
+import Loading from '../load/index'
 
 function Painel() {
     const { api } = useContext(AutorizacaoContexto)
-
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setInterval(() => {
@@ -13,7 +14,7 @@ function Painel() {
         }, 2000);
     }, [])
 
-    const [exibicao, setExibicao] = useState([]);
+
     const [ticketEmAtendimento, setTicketEmAtendimento] = useState([]);
     const ticketEmAtendimentoParaExibicaoPricipal = ticketEmAtendimento.slice(-1)
     const ticketEmAtendimentoParaExibicaoSecundaria = ticketEmAtendimento.slice(-3)
@@ -29,9 +30,8 @@ function Painel() {
     async function buscarTicketEmAtendimento() {
         const status = new Status("EM_ATENDIMENTO");
         const { data } = await api.getSenhaPainel(status);
-        console.log(data)
+        setLoading(false);
         setTicketEmAtendimento(data);
-        setExibicao(data);
     }
 
 
@@ -39,7 +39,8 @@ function Painel() {
 
     return (
         <Body background={Fundo} >
-            {exibicao &&
+
+            {!loading &&
                 <>
                     <DivTicketDaVez>
 
@@ -63,7 +64,7 @@ function Painel() {
                 </>
                 ||
 
-                <h1>Não há tickets em atendimento no momento!</h1>
+                <Loading />
 
             }
         </Body>

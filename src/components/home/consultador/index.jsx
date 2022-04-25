@@ -8,6 +8,7 @@ import IconeFind from "../../../config/gerenciador de atend/find-1440_8882c961-e
 import Ticket from '../../admin/ticket';
 import Logo from '../../../config/Orion_entrance.svg'
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
+import Loading from '../../admin/load/index'
 
 
 function Consultador() {
@@ -15,6 +16,7 @@ function Consultador() {
     const { api } = useContext(AutorizacaoContexto)
     const [senhaConsultada, setSenhaConsultada] = useState();
     const [erro, setErro] = useState();
+    const [loading, setLoading] = useState(false);
     let navigate = useNavigate();
 
 
@@ -37,12 +39,14 @@ function Consultador() {
     }
     async function consultarGiche(senha) {
         try {
+            setLoading(true);
             const { data } = await api.getConsultarSenha(senha);
             setSenhaConsultada(data)
 
 
         } catch (e) {
-            setErro("Senha inválida")
+            setLoading(false);
+            setErro("Senha inválida");
         }
 
     }
@@ -61,22 +65,27 @@ function Consultador() {
                 </HeaderContentRigth>
             </Header>
             <Conteiner>
-                {senhaConsultada && <Ticket ticket={senhaConsultada} setTicket={setSenhaConsultada} /> ||
-                    <Form onSubmit={handleConsultar}>
-                        <Div>
-                            <DivImg>
-                                <Img src={Icone} width="200" height="200" />
-                            </DivImg>
-                            <H2>Consulte sua senha aqui</H2>
-                            <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />
-                            {erro && <Erro>{erro}</Erro>}
-                            <DivButton>
-                                <Button type="submit">Consultar</Button>
-                            </DivButton>
+                {senhaConsultada && <Ticket ticket={senhaConsultada} setTicket={setSenhaConsultada} setLoading={setLoading} /> ||
+                    <>
+                        {
+                            loading && <Loading width=" 19.14" height=" 19.14" />
+                            ||
+                            <Form onSubmit={handleConsultar}>
+                                <Div>
+                                    <DivImg>
+                                        <Img src={Icone} width="200" height="200" />
+                                    </DivImg>
+                                    <H2>Consulte sua senha aqui</H2>
+                                    <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />
+                                    {erro && <Erro>{erro}</Erro>}
+                                    <DivButton>
+                                        <Button type="submit">Consultar</Button>
+                                    </DivButton>
 
-                        </Div>
-
-                    </Form>
+                                </Div>
+                            </Form>
+                        }
+                    </>
                 }
 
             </Conteiner>
@@ -89,3 +98,11 @@ function Consultador() {
 }
 
 export default Consultador
+
+
+
+
+
+
+
+
