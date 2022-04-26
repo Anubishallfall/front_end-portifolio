@@ -16,6 +16,7 @@ import CredenciasLoja from '../credenciais';
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import { useNavigate } from "react-router-dom"
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
+import Loading from '../load/index';
 
 
 function Cadastro() {
@@ -24,6 +25,7 @@ function Cadastro() {
     const { api } = useContext(AutorizacaoContexto)
 
     const [lojaExibicao, setLojaExibicao] = useState();
+    const [loading, setLoading] = useState(false);
     let navigate = useNavigate();
 
 
@@ -79,14 +81,16 @@ function Cadastro() {
 
     function handleCadastrarLoja(e) {
         e.preventDefault()
-        const usuario = new Usuario(usernameRef.current.value, passwordRef.current.value)
-        const endereco = new Endereco(ruaRef.current.value, bairroRef.current.value, cidadeRef.current.value, ufRef.current.value)
-        const loja = new Loja(nomeRef.current.value, foneRef.current.value, cpfCnpjRef.current.value, endereco, usuario)
+        const usuario = new Usuario(usernameRef.current.value, passwordRef.current.value);
+        const endereco = new Endereco(ruaRef.current.value, bairroRef.current.value, cidadeRef.current.value, ufRef.current.value);
+        const loja = new Loja(nomeRef.current.value, foneRef.current.value, cpfCnpjRef.current.value, endereco, usuario);
+        setLoading(true);
         cadastrarLoja(loja)
     }
 
     async function cadastrarLoja(loja) {
         const { data } = await api.getCriarLoja(loja);
+        setLoading(false);
         setLojaExibicao(data)
 
     }
@@ -95,38 +99,44 @@ function Cadastro() {
         <Body background={Fundo}>
             <Conteiner>
                 <DivFormCadastro>
-                    {lojaExibicao && <CredenciasLoja loja={lojaExibicao} /> ||
-                        <Form onSubmit={handleCadastrarLoja} >
-                            <DivImagem>
-                                <DivCirculo>
-                                    <Img src={Icone} />
-                                </DivCirculo>
-                            </DivImagem>
-                            <Div>
-                                <InputItemText width="80%" placeholder="Nome da Loja" refInput={nomeRef} requiredValue={true} background={IconeStore} />
-                                <InputItemText width="80%" placeholder="Email" type='email' refInput={usernameRef} requiredValue={true} background={IconeEmail} />
-                                <InputItemText width="80%" placeholder="Password" type='password' refInput={passwordRef} requiredValue={true} background={IconePassword} />
-                                <InputItemText width="32%" placeholder="CNPJ/CPF" refInput={cpfCnpjRef} requiredValue={true} background={IconeCpf} />
-                                <InputItemText width="46%" placeholder="Fone:" refInput={foneRef} requiredValue={true} background={IconeFone} />
-                                <InputItemText width="50%" placeholder="Rua" refInput={ruaRef} requiredValue={true} background={IconeRua} />
-                                <InputItemText width="28%" placeholder="Bairro" refInput={bairroRef} requiredValue={true} background={IconeBairro} />
-                                <InputItemText width="50%" placeholder="Cidade" refInput={cidadeRef} requiredValue={true} background={IconeLocalizaco} />
-                                <InputItemText width="28%" placeholder="UF" refInput={ufRef} requiredValue={true} background={IconeState} />
+                    {loading && <Loading width=" 20" height=" 20" />
+                        ||
+                        <>
+                            {lojaExibicao && <CredenciasLoja loja={lojaExibicao} /> ||
+                                <Form onSubmit={handleCadastrarLoja} >
+                                    <DivImagem>
+                                        <DivCirculo>
+                                            <Img src={Icone} />
+                                        </DivCirculo>
+                                    </DivImagem>
+                                    <Div>
+                                        <InputItemText width="80%" placeholder="Nome da Loja" refInput={nomeRef} requiredValue={true} background={IconeStore} />
+                                        <InputItemText width="80%" placeholder="Email" type='email' refInput={usernameRef} requiredValue={true} background={IconeEmail} />
+                                        <InputItemText width="80%" placeholder="Password" type='password' refInput={passwordRef} requiredValue={true} background={IconePassword} />
+                                        <InputItemText width="32%" placeholder="CNPJ/CPF" refInput={cpfCnpjRef} requiredValue={true} background={IconeCpf} />
+                                        <InputItemText width="46%" placeholder="Fone:" refInput={foneRef} requiredValue={true} background={IconeFone} />
+                                        <InputItemText width="50%" placeholder="Rua" refInput={ruaRef} requiredValue={true} background={IconeRua} />
+                                        <InputItemText width="28%" placeholder="Bairro" refInput={bairroRef} requiredValue={true} background={IconeBairro} />
+                                        <InputItemText width="50%" placeholder="Cidade" refInput={cidadeRef} requiredValue={true} background={IconeLocalizaco} />
+                                        <InputItemText width="28%" placeholder="UF" refInput={ufRef} requiredValue={true} background={IconeState} />
 
-                            </Div>
-                            <DivButton>
-                                <DivVoltarParaLogin>
-                                    <P>
-                                        Tem uma conta?
+                                    </Div>
+                                    <DivButton>
+                                        <DivVoltarParaLogin>
+                                            <P>
+                                                Tem uma conta?
 
-                                    </P>
-                                    <PLogin onClick={() => navigate(-1)} >Conecte-se</PLogin>
-                                </DivVoltarParaLogin>
-                                <DivButtonCadastrar>
-                                    <Button type="submit" >Cadastrar</Button>
-                                </DivButtonCadastrar>
-                            </DivButton>
-                        </Form>
+                                            </P>
+                                            <PLogin onClick={() => navigate(-1)} >Conecte-se</PLogin>
+                                        </DivVoltarParaLogin>
+                                        <DivButtonCadastrar>
+                                            <Button type="submit" >Cadastrar</Button>
+                                        </DivButtonCadastrar>
+                                    </DivButton>
+                                </Form>
+                            }
+
+                        </>
                     }
                 </DivFormCadastro>
                 <DivButtonVoltarLogin>
