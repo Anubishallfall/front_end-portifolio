@@ -14,7 +14,7 @@ function Gerador() {
             <Conteiner>
                 {ticket && <Ticket ticket={ticket} setTicket={setTicket} setLoading={setLoading} /> ||
                     <>
-                        {loading && <Loading width=" 19.14" height=" 19.14" />
+                        {loading && <Loading width=" 150" height=" 150" />
                             ||
 
                             <FormularioGerador setTicket={setTicket} setLoading={setLoading} />

@@ -4,20 +4,24 @@ import styled from "styled-components";
 
 
 export const Form = styled.form`
-width: 30.62vw;
-height:  30.62vw;
+width: 37%;
+display: flex;
+justify-content: center;
+@media (max-width: 800px) {
+width: 100%
+    }
 `;
 export const Div = styled.div`
-width: 100%;
+width: 80%;
 display: flex;
 flex-direction: column;
 align-items: center;
 
 `;
 export const Button = styled.button`
-margin-top: 1.53vw;
-padding: 0.61vw 1.53vw;
-font-size: 1.91vw;
+margin-top: 20px;
+padding: 8px 20px;
+font-size:25px;
 border: none;
 color: #fff;
 background-color: #50BED2;
@@ -26,6 +30,9 @@ transition: transform .5s;
     transform: scale(1.1);
     box-shadow:  0.38vw 0.38vw  0.38vw  #888888;
  }
+ @media (max-width: 800px) {
+width: 100%
+    }
 `;
 
 export const DivButton = styled.div`
@@ -36,18 +43,13 @@ justify-content:center;
 `;
 
 export const Img = styled.img`
-width: 15.31vw;
-height: 15.31vw;
-`;
-
-export const ImgCadastro = styled.img`
-width: 15.31vw;
-height: 15.31vw;
+width: 200px;
+height: 200px;
 `;
 export const DivImg = styled.div`
-border-radius:  11.48vw;
+border-radius: 150px;
 background-color:#50BED2;
-padding: 1.53vw;
+padding: 20px;
 `;
 export const InputRadio = styled.input`
 background-color: #eee;
@@ -57,11 +59,11 @@ background-color: #eee;
 }
 `;
 export const Label = styled.label`
-font-size: 1.83vw;
+/* font-size: 1.83vw; */
 `;
 export const ConteinerInput = styled.div`
 width: 80%;
-margin-top: 1.53vw;
+margin-top: 20px;
 display: flex;
 justify-content: space-evenly;
 `;
@@ -72,6 +74,6 @@ align-items:center;
 `;
 
 export const H2 = styled.h2`
-font-size: 1.83vw;
+/* font-size: 24px; */
 color: #3f3d56;
 `;

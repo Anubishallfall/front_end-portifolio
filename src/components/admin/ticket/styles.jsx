@@ -11,7 +11,10 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 @media (max-width: 800px) {
-width: 200px;
+width: 280px;
+    }
+    @media (max-width: 350px) {
+     width: 200px;
     }
 `;
 
@@ -65,6 +68,10 @@ left: 200px;
 bottom: 470px;
 box-shadow:  5px   5px   5px  #888888;
 @media (max-width: 800px) {
+    left: 140px;
+    bottom: 370px;
+    }
+    @media (max-width: 350px) {
     left: 100px;
     bottom: 370px;
     }

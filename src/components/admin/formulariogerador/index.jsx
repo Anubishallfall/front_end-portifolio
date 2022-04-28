@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useEffect } from 'react'
-import { Form, Div, Button, DivButton, DivImg, ImgCadastro, ConteinerInput, DivInput, Label, InputRadio, H2 } from "./styles";
+import { Form, Div, Button, DivButton, DivImg, Img, ConteinerInput, DivInput, Label, InputRadio, H2 } from "./styles";
 import InputItemText from '../InputText/index'
 import Icone from "../../../config/undraw_photocopy_re_gln4.svg"
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
@@ -52,9 +52,9 @@ function FormularioGerador({ setTicket, setLoading }) {
         <Form onSubmit={handleGerarSenha}>
             <Div>
                 <DivImg>
-                    <ImgCadastro src={Icone} />
+                    <Img src={Icone} />
                 </DivImg>
-                <H2>Gere sua senha aqui</H2>
+                <H2>Gere sua senha</H2>
                 <InputItemText type="text" width="80%" placeholder="Nome Completo" refInput={nomeRef} requiredValue={true} />
                 <ConteinerInput>
                     <DivInput>
