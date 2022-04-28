@@ -12,14 +12,14 @@ export const InputDiv = styled.div`
 `;
 
 export const InputText = styled.input`
-border-top: none;
-border-left: none;
-border-right: none;
-padding: 10px 20px;
-outline: none;
-padding-left:25px;
-background:  ${props => `url(${props.background}) no-repeat left`};
-background-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px 20px;
+    outline: none;
+    padding-left:25px;
+    background:  ${props => `url(${props.background}) no-repeat left`};
+    background-size: 20px;
 `;
 export const InputLabel = styled.label`
     color: #000;

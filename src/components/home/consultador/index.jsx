@@ -1,12 +1,30 @@
 import React, { useRef, useState, useContext } from 'react'
-import { Body, Conteiner, Form, Div, Button, DivButton, DivImg, ImgCadastro, H2, Header, ButtonNavRight, OptionDiv, HeaderContentRigth, Img, Erro, Footer, P, TextoLogo, DivLogo } from "./styles";
+import {
+    Body,
+    Header,
+    ContainerLogo,
+    Logo,
+    TextoLogo,
+    Conteiner,
+    Form,
+    ContainerForm,
+    ButtonSubmit,
+    DivButton,
+    DivImg,
+    ImgCadastro,
+    H2,
+    ButtonNavRight,
+    Erro,
+    Footer,
+    P
+} from "./styles";
 import InputItemText from '../../admin/InputText';
 import Icone from "../../../config/undraw_web_search_re_efla.svg"
 import Fundo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import { useNavigate } from "react-router-dom";
 import IconeFind from "../../../config/gerenciador de atend/find-1440_8882c961-ec7d-4eba-b39d-a503d1d433d4.png"
 import Ticket from '../../admin/ticket';
-import Logo from '../../../config/Orion_entrance.svg'
+import IconLogo from '../../../config/Orion_entrance.svg'
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
 import Loading from '../../admin/load/index'
 
@@ -18,9 +36,6 @@ function Consultador() {
     const [erro, setErro] = useState();
     const [loading, setLoading] = useState(false);
     let navigate = useNavigate();
-
-
-
 
     const senhaRef = useRef();
 
@@ -37,6 +52,7 @@ function Consultador() {
         consultarGiche(senha);
 
     }
+
     async function consultarGiche(senha) {
         try {
             setLoading(true);
@@ -54,15 +70,11 @@ function Consultador() {
     return (
         <Body background={Fundo} >
             <Header>
-                <DivLogo>
+                <ContainerLogo>
                     <TextoLogo>Tictak</TextoLogo>
-                    <Img src={Logo} width="50" height="50" />
-                </DivLogo>
-                <HeaderContentRigth>
-                    <OptionDiv>
-                        <ButtonNavRight onClick={() => navigate("admin")} >Administração</ButtonNavRight>
-                    </OptionDiv>
-                </HeaderContentRigth>
+                    <Logo src={IconLogo} width="50" height="50" />
+                </ContainerLogo>
+                <ButtonNavRight onClick={() => navigate("admin")} >Administração</ButtonNavRight>
             </Header>
             <Conteiner>
                 {senhaConsultada && <Ticket ticket={senhaConsultada} setTicket={setSenhaConsultada} setLoading={setLoading} /> ||
@@ -71,18 +83,17 @@ function Consultador() {
                             loading && <Loading width=" 19.14" height=" 19.14" />
                             ||
                             <Form onSubmit={handleConsultar}>
-                                <Div>
+                                <ContainerForm>
                                     <DivImg>
-                                        <Img src={Icone} width="200" height="200" />
+                                        <ImgCadastro src={Icone} />
                                     </DivImg>
-                                    <H2>Consulte sua senha aqui</H2>
-                                    <InputItemText type="text" width="80%" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />
+                                    <H2>Consulte sua senha</H2>
+                                    <InputItemText type="text" placeholder="Sua Senha" refInput={senhaRef} requiredValue={true} background={IconeFind} />
                                     {erro && <Erro>{erro}</Erro>}
                                     <DivButton>
-                                        <Button type="submit">Consultar</Button>
+                                        <ButtonSubmit type="submit">Consultar</ButtonSubmit>
                                     </DivButton>
-
-                                </Div>
+                                </ContainerForm>
                             </Form>
                         }
                     </>

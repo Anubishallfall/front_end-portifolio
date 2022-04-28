@@ -3,9 +3,18 @@ import axios from 'axios';
 class Api {
 
     constructor(autorizacao = {}) {
+        console.log("nova instancia Api")
         this.servico = axios.create({
             baseURL: process.env.REACT_APP_LINK_API,
             headers: { Authorization: `Bearer ${autorizacao.token}` }
+        });
+
+        this.servico.interceptors.request.use(function (config) {
+            console.log(config.baseURL, config.url)
+            return config;
+        }, function (error) {
+            // Faça algo com erro da solicitação
+            return Promise.reject(error);
         });
     }
 

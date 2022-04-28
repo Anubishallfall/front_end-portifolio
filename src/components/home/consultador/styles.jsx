@@ -2,39 +2,75 @@ import styled from "styled-components";
 import ConfiguracaoSistema from "../../../config/index"
 
 export const Body = styled.div`
- width: 100%;
-height: ${ConfiguracaoSistema.tela.tamanho.height}px;
- background: ${props => `url(${props.background}) no-repeat top center`};
- background-size: auto;
- display: flex;
- flex-direction: column;
- justify-content: space-between ;
+    width: 100%;
+    height: ${ConfiguracaoSistema.tela.tamanho.height}px;
+    background: ${props => `url(${props.background}) no-repeat top center`};
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
 `;
-export const Form = styled.form`
-width: 30%;
-@media(max-width:  800px){
-        width: 80%;
-    }
+
+export const Header = styled.div`
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 `;
+
+export const ContainerLogo = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+export const Logo = styled.img`
+    width:  ${props => `${props.width}`}px;
+    height:  ${props => `${props.height}`}px;
+`;
+
+export const TextoLogo = styled.h1`
+    color: #50BED2;
+`;
+
+
 export const Conteiner = styled.div`
- width: 100%;
- height: 80%;
- display:flex;
- justify-content: center;
- align-items: center;
+    height: 80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 `;
-export const Button = styled.button`
-margin-top: 20px;
-padding: 2.5% 10%;
-font-size: 25px;
-border: none;
-color: #fff;
-background-color: #50BED2;
-transition: transform .5s;
- &:hover{
-    transform: scale(1.1);
-    box-shadow: 5px 5px 5px #888888;
- }
+
+export const Form = styled.form`
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+`;
+
+export const ContainerForm = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const ButtonSubmit = styled.button`
+    margin-top: 20px;
+    padding: 20px 50px;
+    font-size: 20px;
+    border: none;
+    color: #fff;
+    background-color: #50BED2;
+    transition: transform .5s;
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 5px 5px 5px #888888;
+    }
+    @media(max-width:  900px){
+        width: 100%;
+        padding: 15px 40px;
+    }
 `;
 
 export const DivButton = styled.div`
@@ -44,20 +80,16 @@ justify-content:center;
 
 `;
 
-export const Img = styled.img`
-width:  ${props => `${props.width}`}px;
-height:  ${props => `${props.height}`}px;
+
+export const DivImg = styled.div`
+    border-radius:  150px;
+    background-color:#50BED2;
+    padding: 20px;
 `;
 
 export const ImgCadastro = styled.img`
-width:  15.31vw;
-height:  15.31vw;
-`;
-export const DivImg = styled.div`
-border-radius:  150px;
-background-color:#50BED2;
-padding: 20px;
-
+    width:  200px;
+    height:  200px;
 `;
 export const InputRadio = styled.input`
 background-color: #eee;
@@ -84,23 +116,6 @@ export const H2 = styled.h2`
 color: #3f3d56;
 /* font-size: 1.83vw; */
 `;
-export const Div = styled.div`
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-
-`;
-export const Header = styled.div`
-height:9%;
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding-top: 1%;
-padding-left: 2.5%;
-padding-right: 2.5%;
-`;
 export const HeaderContentLeft = styled.div`
 width: 50%;
 display: flex;
@@ -114,22 +129,19 @@ justify-content: center;
 
 `;
 export const ButtonNavRight = styled.button`
-padding:  8px 20px;
-font-size: 15px;
-border-top-left-radius: 10px;
-border-bottom-left-radius:  10px;
-border-bottom-right-radius:  10px;
-border: none;
-color: #fff;
-background-color: #50BED2;
-transition: transform .5s;
- &:hover{
-    transform: scale(1.1);
-    box-shadow:  5px    5px   5px #888888;}
-
-    @media(max-width:  800px){
-        display: block;
-        visibility: hidden;
+    padding:  8px 20px;
+    font-size: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:  10px;
+    border-bottom-right-radius:  10px;
+    border: none;
+    color: #fff;
+    background-color: #50BED2;
+    transition: transform .5s;
+    &:hover{
+        transform: scale(1.1);
+        box-shadow:  5px 5px 5px #888888;
+    }
 `;
 export const OptionDiv = styled.div`
 display: flex;
@@ -151,12 +163,4 @@ align-items: center;
 export const P = styled.p`
 font-size: 13px;
 color: #707070;
-`;
-export const DivLogo = styled.div`
-display: flex;
-flex-direction: row;
-`;
-export const TextoLogo = styled.h1`
-color: #50BED2;
-
 `;

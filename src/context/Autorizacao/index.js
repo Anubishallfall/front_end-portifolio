@@ -26,7 +26,6 @@ export function AutorizacaoProvider({ children }) {
     }
 
     function salvarLocalStorage(data) {
-
         localStorage.setItem("@gestor_atendimento_autorizacao", JSON.stringify(data));
     }
 
