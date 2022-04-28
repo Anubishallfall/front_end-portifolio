@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-width: 30.62vw;
+width: 400px;
 display: flex ;
 align-items: center;
 flex-direction: column;
 background-color:#edf9fb; background-color:#edf9fb;
- box-shadow: 0.38vw 0.38vw 0.38vw #888888;
-border-top-right-radius: 0.76vw;
-border-bottom-right-radius:  0.76vw;
-border-bottom-left-radius:   0.76vw;
+ box-shadow: 5px 5px 5px #888888;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
 `;
 
 export const Div = styled.div`
@@ -18,42 +18,42 @@ display: flex ;
 justify-content:center;
 `;
 export const SenhaTitulo = styled.h1`
-font-size:  2.45vw;
+/* font-size:  2.45vw; */
 color: #3f3d56;
 `;
 export const SenhaValor = styled.h1`
-font-size:  2.45vw;
-padding:  0.38vw;
+/* font-size:  2.45vw; */
+padding: 5px;
 background-color: #50BED2;
 color: #fff;
-border-top-right-radius:  0.76vw;
-border-bottom-right-radius:  0.76vw;
-border-bottom-left-radius:   0.76vw;
+border-top-right-radius: 10px;
+border-bottom-right-radius:10px;
+border-bottom-left-radius: 10px;
 `;
 export const P = styled.p`
 color: #3f3d56;
 `;
 export const Img = styled.img`
-width: 15.31vw;
-height: 15.31vw;
+width: 200px;
+height: 200px;
 `;
 export const DivDados = styled.div`
 width:80%;
 display: flex ;
-margin-bottom:  0.38vw;
+margin-bottom: 5px;
 `;
 export const Button = styled.button`
-padding:  0.76vw;
-width: 3.06vw;
-height: 3.06vw;
+padding:10px;
+width: 40px;
+height:  40px;
 border-radius: 50%;
 border: none;
 color: #fff;
 background-color: #e2a8a8;
 position: relative;
-left: 15.31vw;
-bottom: 35.98vw;
-box-shadow:  0.38vw  0.38vw  0.38vw #888888;
+left: 200px;
+bottom: 470px;
+box-shadow:  5px   5px   5px  #888888;
 `;
 
 

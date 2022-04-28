@@ -53,13 +53,13 @@ function Login() {
             <Conteiner>
                 <DivImagem>
                     <Div>
-                        <Img src={Imagem} width="30.62" height="30.62" />
+                        <Img src={Imagem} width="400" height="400" />
                     </Div>
                 </DivImagem>
                 <DivLoginForm>
 
                     {loading &&
-                        <Loading width=" 15.31" height=" 15.31" />
+                        <Loading width="200" height="200" />
                         ||
                         <Form onSubmit={handleLogar}>
                             <Div>
