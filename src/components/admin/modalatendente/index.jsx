@@ -37,7 +37,7 @@ function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendime
         <Container>
             <ButtonClose onClick={closeAtendimento}>X</ButtonClose>
             <DivTicket>
-                <Img src={Icone} width=" 11.48" height=" 11.48" />
+                <Img src={Icone} width="150" height="150" />
                 <Senha>{exibirModalDeAtendimento.senha}</Senha>
                 <Nome>{exibirModalDeAtendimento.nomeCompleto}</Nome>
             </DivTicket>
