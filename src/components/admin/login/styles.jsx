@@ -101,12 +101,12 @@ padding: 20px;
 `;
 
 export const P = styled.p`
-/* font-size:  0.99vw; */
+font-size: 12px;
 color: #707070;
 `;
 
 export const PLink = styled.p`
-/* font-size:  0.99vw; */
+font-size: 12px;
 color: #50BED2;
 cursor: pointer;
 margin-left: 2px;
@@ -119,7 +119,6 @@ justify-content: center;
 align-items: center;
 `;
 export const Erro = styled.p`
-/* font-size:  0.99vw; */
 color: #707070;
 `;
 

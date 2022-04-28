@@ -10,6 +10,9 @@ background-color:#edf9fb; background-color:#edf9fb;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
+@media (max-width: 800px) {
+width: 200px;
+    }
 `;
 
 export const Div = styled.div`
@@ -18,20 +21,27 @@ display: flex ;
 justify-content:center;
 `;
 export const SenhaTitulo = styled.h1`
-/* font-size:  2.45vw; */
 color: #3f3d56;
+@media (max-width: 800px) {
+font-size: 15px;
+    }
 `;
 export const SenhaValor = styled.h1`
-/* font-size:  2.45vw; */
 padding: 5px;
 background-color: #50BED2;
 color: #fff;
 border-top-right-radius: 10px;
 border-bottom-right-radius:10px;
 border-bottom-left-radius: 10px;
+@media (max-width: 800px) {
+font-size: 15px;
+    }
 `;
 export const P = styled.p`
 color: #3f3d56;
+@media (max-width: 800px) {
+font-size: 10px;
+    }
 `;
 export const Img = styled.img`
 width: 200px;
@@ -54,6 +64,10 @@ position: relative;
 left: 200px;
 bottom: 470px;
 box-shadow:  5px   5px   5px  #888888;
+@media (max-width: 800px) {
+    left: 100px;
+    bottom: 370px;
+    }
 `;
 
 
