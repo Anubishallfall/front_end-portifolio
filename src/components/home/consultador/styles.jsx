@@ -46,6 +46,9 @@ export const Form = styled.form`
     display: flex;
     justify-content: center;
     max-width: 1000px;
+    @media(max-width:  900px){
+        width: 100%;
+    }
 `;
 
 export const ContainerForm = styled.div`
@@ -53,6 +56,9 @@ export const ContainerForm = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media(max-width:  800px){
+        width: 80%;
+    }
 `;
 
 export const ButtonSubmit = styled.button`
