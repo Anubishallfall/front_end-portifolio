@@ -9,9 +9,6 @@ height: ${ConfiguracaoSistema.tela.tamanho.height}px;
  display: flex;
  flex-direction: column;
  justify-content: center;
- @media (max-width: 800px) {
-   height: auto;
-    }
 `;
 
 export const Conteiner = styled.div`
