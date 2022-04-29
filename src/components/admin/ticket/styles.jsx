@@ -11,7 +11,7 @@ border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;
 @media (max-width: 800px) {
-width: 280px;
+width: 300px;
     }
     @media (max-width: 350px) {
      width: 200px;
@@ -26,7 +26,10 @@ justify-content:center;
 export const SenhaTitulo = styled.h1`
 color: #3f3d56;
 @media (max-width: 800px) {
-font-size: 15px;
+    font-size: 25px;
+    }
+    @media (max-width: 350px) {
+     font-size: 15px;
     }
 `;
 export const SenhaValor = styled.h1`
@@ -37,13 +40,19 @@ border-top-right-radius: 10px;
 border-bottom-right-radius:10px;
 border-bottom-left-radius: 10px;
 @media (max-width: 800px) {
-font-size: 15px;
+font-size: 25px;
+    }
+    @media (max-width: 350px) {
+        font-size: 15px;
     }
 `;
 export const P = styled.p`
 color: #3f3d56;
 @media (max-width: 800px) {
-font-size: 10px;
+font-size: 15px;
+    }
+    @media (max-width: 350px) {
+        font-size: 10px;
     }
 `;
 export const Img = styled.img`
@@ -69,7 +78,7 @@ bottom: 470px;
 box-shadow:  5px   5px   5px  #888888;
 @media (max-width: 800px) {
     left: 140px;
-    bottom: 370px;
+    bottom: 445px;
     }
     @media (max-width: 350px) {
     left: 100px;

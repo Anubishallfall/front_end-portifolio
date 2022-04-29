@@ -27,10 +27,17 @@ export const ContainerLogo = styled.div`
 export const Logo = styled.img`
     width:  ${props => `${props.width}`}px;
     height:  ${props => `${props.height}`}px;
+    @media(max-width:  320px){
+     width: 25px;
+     height: 25px;
+    }
 `;
 
 export const TextoLogo = styled.h1`
     color: #50BED2;
+    @media(max-width:  320px){
+   font-size: 15px;
+    }
 `;
 
 
@@ -147,6 +154,10 @@ export const ButtonNavRight = styled.button`
     &:hover{
         transform: scale(1.1);
         box-shadow:  5px 5px 5px #888888;
+
+    }
+    @media(max-width:  320px){
+   font-size: 10px;
     }
 `;
 export const OptionDiv = styled.div`
@@ -169,4 +180,7 @@ align-items: center;
 export const P = styled.p`
 font-size: 13px;
 color: #707070;
+@media(max-width:  320px){
+   font-size: 10px;
+    }
 `;
