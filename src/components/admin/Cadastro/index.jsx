@@ -99,7 +99,7 @@ function Cadastro() {
         <Body background={Fundo}>
             <Conteiner>
                 <DivFormCadastro>
-                    {loading && <Loading width=" 20" height=" 20" />
+                    {loading && <Loading width=" 150" height="150" />
                         ||
                         <>
                             {lojaExibicao && <CredenciasLoja loja={lojaExibicao} /> ||

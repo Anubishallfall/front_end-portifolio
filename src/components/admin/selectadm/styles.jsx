@@ -27,6 +27,7 @@ export const Div = styled.div`
  justify-content: center;
  @media (max-width: 963px) {
    margin-bottom: 20px;
+   width: 100%;
     }
 `;
 export const DivOptions = styled.div`
@@ -44,6 +45,9 @@ border-bottom-left-radius:  10px;
     transform: scale(1.1);
     box-shadow: 20px 20px 20px  #888888;
  }
+ @media (max-width:963px) {
+   width: 80%;
+    }
 `;
 export const Img = styled.img`
 width:  ${props => `${props.width}`}px;

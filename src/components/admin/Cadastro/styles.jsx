@@ -96,7 +96,8 @@ transition: transform .5s;
     box-shadow:  5px  5px 5px #888888;
  }
  @media (max-width: 800px) {
-width: 100%;
+    width: 100%;
+    padding: 15px 40px;
 }
 `;
 
@@ -126,7 +127,7 @@ display: flex;
 justify-content: end;
 @media (max-width: 800px) {
 justify-content: center;
-width: 80%;
+width: 100%;
 }
 `;
 export const DivVoltarParaLogin = styled.div`

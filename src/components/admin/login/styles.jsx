@@ -68,7 +68,8 @@ transition: transform .5s;
     box-shadow: 4px 4px 4px #888888;
  }
  @media (max-width: 800px) {
-width: 80%;
+    width: 100%;
+    padding: 15px 40px;
     }
 `;
 

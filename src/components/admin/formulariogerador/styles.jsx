@@ -31,7 +31,8 @@ transition: transform .5s;
     box-shadow:  0.38vw 0.38vw  0.38vw  #888888;
  }
  @media (max-width: 800px) {
-width: 100%
+    width: 100%;
+    padding: 15px 40px;
     }
 `;
 
