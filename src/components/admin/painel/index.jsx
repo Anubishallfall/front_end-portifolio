@@ -64,7 +64,7 @@ function Painel() {
                 </>
                 ||
 
-                <Loading />
+                <Loading width="300" height="300" />
 
             }
         </Body>
