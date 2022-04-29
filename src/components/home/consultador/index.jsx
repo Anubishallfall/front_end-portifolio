@@ -101,7 +101,7 @@ function Consultador() {
 
             </Conteiner>
             <Footer>
-                <P> © 2022 Tictak Maneger -
+                <P> © 2022 Tictak Manager -
                     creator by Mauro Peixoto</P>
             </Footer>
         </Body>
