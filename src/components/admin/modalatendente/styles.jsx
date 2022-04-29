@@ -11,7 +11,6 @@ border-bottom-left-radius:  10px;
 background-color:#edf9fb;
  box-shadow:  5px  5px 5px #888888;
  flex-direction: column;
- justify-content: center;
  background-color:#edf9fb;
  align-items: center;
  @media (max-width: 800px) {
@@ -20,7 +19,26 @@ background-color:#edf9fb;
     @media (max-width: 350px) {
       width: 250px;
     }
+    @media (max-width:250px) {
+      width: 200px;
+    }
 `;
+export const Body = styled.div`
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+`;
+
+
+
+
+export const HeaderCard = styled.div`
+width: 100%;
+    display: flex ;
+    justify-content: end;
+`;
+
 export const DivTicket = styled.div`
  width: 100%;
  display: flex;
@@ -76,22 +94,19 @@ background-color: #50BED2;
     }
 `;
 export const ButtonClose = styled.button`
-padding: 10px;
+/* padding: 10px;
 width: 40px;
 height: 40px;
 border-radius: 50%;
 border: none;
 color: #fff;
 background-color: #e2a8a8;
-box-shadow:  5px  5px 5px #888888;
+box-shadow:  5px  5px 5px #888888; */
 position: relative;
-left:  340px;
-bottom: 34px; 
-@media (max-width: 800px) {
-    left:  170px;
-    bottom: 100px; 
-    }
-    @media (max-width: 350px) {
-      left: 110px;
-    }
+    justify-items: center;
+    border: none;
+    background: none;
+    color: #e2a8a8;
+    font-size: 30px;
+    font-weight: bold;
 `;

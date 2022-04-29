@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Container, DivTicket, DivButton, Img, Senha, Nome, Button, ButtonClose } from "./styles";
+import { Container, DivTicket, DivButton, Img, Senha, Nome, Button, ButtonClose, HeaderCard, Body } from "./styles";
 import Icone from "../../../config/undraw_certificate_re_yadi.svg";
 import { AutorizacaoContexto } from '../../../context/Autorizacao';
 
@@ -35,16 +35,20 @@ function ModalDeAtendimento({ setExibirModalDeAtendimento, exibirModalDeAtendime
 
     return (
         <Container>
-            <ButtonClose onClick={closeAtendimento}>X</ButtonClose>
-            <DivTicket>
-                <Img src={Icone} width="150" height="150" />
-                <Senha>{exibirModalDeAtendimento.senha}</Senha>
-                <Nome>{exibirModalDeAtendimento.nomeCompleto}</Nome>
-            </DivTicket>
-            <DivButton>
-                <Button onClick={handleAusente}>Ausente</Button>
-                <Button onClick={handleAtendido}>Atendido</Button>
-            </DivButton>
+            <HeaderCard>
+                <ButtonClose onClick={closeAtendimento}>X</ButtonClose>
+            </HeaderCard>
+            <Body>
+                <DivTicket>
+                    <Img src={Icone} width="150" height="150" />
+                    <Senha>{exibirModalDeAtendimento.senha}</Senha>
+                    <Nome>{exibirModalDeAtendimento.nomeCompleto}</Nome>
+                </DivTicket>
+                <DivButton>
+                    <Button onClick={handleAusente}>Ausente</Button>
+                    <Button onClick={handleAtendido}>Atendido</Button>
+                </DivButton>
+            </Body>
         </Container>
     )
 }
