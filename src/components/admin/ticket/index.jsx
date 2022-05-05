@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, SenhaValor, Div, SenhaTitulo, P, Img, DivDados, Button, BodyCard, HeaderCard } from "./styles";
+import { Container, SenhaValor, Div, SenhaTitulo, P, Img, DivDados, Button, BodyCard, HeaderCard, DivPosicao } from "./styles";
 import Icone from "../../../config/undraw_personal_info_re_ur1n (1).svg"
 function Ticket({ ticket, setTicket, setLoading }) {
 
@@ -30,6 +30,12 @@ function Ticket({ ticket, setTicket, setLoading }) {
                 <DivDados>
                     <P>Status:{ticket.status.descricao}</P>
                 </DivDados>
+                {ticket.posicao &&
+                    <DivPosicao>
+                        <P>Sua posição na fila é {ticket.posicao}</P>
+                    </DivPosicao>
+                }
+
             </BodyCard>
         </Container>
     )

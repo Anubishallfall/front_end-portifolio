@@ -71,7 +71,7 @@ height: 200px;
 export const DivDados = styled.div`
     width:80%;
     display: flex ;
-    margin-bottom: 5px;
+    /* margin-bottom: 3px; */
 `;
 export const Button = styled.button`
     position: relative;
@@ -83,5 +83,9 @@ export const Button = styled.button`
     font-weight: bold;
 `;
 
+export const DivPosicao = styled.div`
+    width:80%;
+    display: flex 
+`;
 
 

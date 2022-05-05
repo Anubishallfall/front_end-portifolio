@@ -16,7 +16,10 @@ export const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 `;
 
 export const ContainerLogo = styled.div`
