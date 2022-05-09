@@ -13,6 +13,9 @@ background-color:#edf9fb;
  flex-direction: column;
  background-color:#edf9fb;
  align-items: center;
+ @media (max-width:800px) {
+     margin-top: 100px;
+    }
  @media (max-width: 800px) {
       width: 350px;
     }
