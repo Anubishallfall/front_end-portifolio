@@ -9,12 +9,17 @@ height: ${ConfiguracaoSistema.tela.tamanho.height}px;
  display: flex;
  flex-direction: column;
  justify-content: center;
+ align-items: center;
+ @media (max-width: 800px) {
+height: auto;
+    }
 `;
 
 export const Conteiner = styled.div`
  width: 100%;
  display:flex;
  justify-content: center;
+ align-items: center;
  align-items: center;
  @media (max-width: 800px) {
 flex-direction: column;
