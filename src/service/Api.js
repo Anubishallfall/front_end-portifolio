@@ -53,6 +53,10 @@ class Api {
         return this.servico.post("/loja", loja);
     }
 
+    getAtendimentoPersonalizado = function (form) {
+        return this.servico.post("/ticket/personalizado", form);
+    }
+
 }
 
 

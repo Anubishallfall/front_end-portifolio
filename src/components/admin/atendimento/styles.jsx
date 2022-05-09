@@ -28,12 +28,9 @@ background-color:#edf9fb;
 `;
 export const Body = styled.div`
  width: 100%;
- height: 80%;
- margin-top: 100px;
  display: flex;
  flex-direction: column;
  justify-content: center;
- align-items: center;
 `;
 
 
@@ -80,7 +77,10 @@ border-bottom-left-radius:  10px;
         font-size: 25px;
     }
 `;
-
+export const Nome = styled.h2`
+/* font-size: 1.83vw; */
+color: #3f3d56;
+`;
 export const Button = styled.button`
 margin-top: 20px;
 padding: 8px 20px;
@@ -112,17 +112,4 @@ position: relative;
     color: #e2a8a8;
     font-size: 30px;
     font-weight: bold;
-`;
-
-export const Perro = styled.p`
-font-size: 12px;
-color: #707070;
-`;
-export const DivInput = styled.div`
-width: 60%;
-display: flex;
-justify-content: center;
-@media (max-width: 800px) {
-  width: 80%;
-    }
 `;
