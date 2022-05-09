@@ -36,7 +36,7 @@ export function AutorizacaoProvider({ children }) {
     }
 
     async function logOut() {
-        setAutorizacao(null)
+        localStorage.clear()
     }
 
 

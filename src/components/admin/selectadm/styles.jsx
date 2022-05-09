@@ -107,3 +107,25 @@ text-decoration: none;
 text-transform: none;
 text-overflow: none;
 `;
+export const DivButtonLogout = styled.div`
+display: flex;
+padding-top: 5px ;
+padding-left: 20px;
+`;
+export const ButtonLogout = styled.button`
+background-color:#50BED2;
+color: white;
+transition: transform .5s;
+border: none;
+padding: 8px 20px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius:  10px;
+font-size: 20px;
+&:hover{
+    transform: scale(1.1);
+    box-shadow: 4px 4px 4px #888888;
+ }
+ @media (max-width: 302px) {
+  font-size: 18px;}
+`;
