@@ -10,8 +10,12 @@ function Admin() {
     return (
         <Routes>
             <Route path="/">
-                <Route index element={<Login />} />
-                <Route path="cadastro" element={<Cadastro />} />
+                <Route index element={
+                    <Login />
+                } />
+                <Route path="cadastro" element={
+                    <Cadastro />
+                } />
                 <Route path="workspaces/*" element={
                     <PrivateRoute>
                         <AreaAdmin />

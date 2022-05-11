@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState } from 'react'
+import React, { useRef, useContext, useState, useEffect } from 'react'
 import { Body, Conteiner, DivLoginForm, DivImagem, Form, Div, Button, DivButton, Img, DivImg, ImgCadastro, P, DivLink, PLink, Erro } from "./styles";
 import Logo from "../../../config/vecteezybackground-whiteben0821_generated.jpg"
 import Imagem from '../../../config/undraw_thought_process_re_om58.svg'
@@ -12,7 +12,8 @@ import { AutorizacaoContexto } from '../../../context/Autorizacao';
 import Loading from '../load';
 
 function Login() {
-    const { logIn } = useContext(AutorizacaoContexto)
+    const { logIn, autorizacao } = useContext(AutorizacaoContexto)
+
 
     const [erro, setErro] = useState();
     const [loading, setLoading] = useState(false);

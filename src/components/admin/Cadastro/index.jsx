@@ -26,6 +26,7 @@ function Cadastro() {
 
     const [lojaExibicao, setLojaExibicao] = useState();
     const [loading, setLoading] = useState(false);
+    const [erro, setErro] = useState();
     let navigate = useNavigate();
 
 
@@ -89,9 +90,15 @@ function Cadastro() {
     }
 
     async function cadastrarLoja(loja) {
-        const { data } = await api.getCriarLoja(loja);
-        setLoading(false);
-        setLojaExibicao(data)
+        try {
+            const { data } = await api.getCriarLoja(loja);
+            setLoading(false);
+            setLojaExibicao(data)
+
+        } catch (e) {
+            setLoading(false)
+            setErro("usuario indisponível")
+        }
 
     }
 
@@ -121,6 +128,7 @@ function Cadastro() {
                                         <InputItemText width="28%" placeholder="UF" refInput={ufRef} requiredValue={true} background={IconeState} />
 
                                     </Div>
+                                    <P>{erro}</P>
                                     <DivButton>
                                         <DivVoltarParaLogin>
                                             <P>
